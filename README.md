@@ -1,4 +1,4 @@
-# SPSF Thick Map
+# SF Thick Map
 
 Andrew Chen and Daniel Akili
 
