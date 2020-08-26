@@ -447,6 +447,7 @@
 				DEVELOPMENT_TEAM = CD9ELK9GYZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = sfthickmap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,6 +468,7 @@
 				DEVELOPMENT_TEAM = CD9ELK9GYZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = sfthickmap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
