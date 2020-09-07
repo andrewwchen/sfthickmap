@@ -7,102 +7,124 @@
 //
 
 import SwiftUI
+import SceneKit
+
+class Selections: ObservableObject {
+    @Published var currentLandmark: Landmark?
+    @Published var currentButton: PanoButton?
+    let landmark1 = Landmark(name: "Landmark #1", panoImage: UIImage(imageLiteralResourceName: "landmark1.jpg"), panoButtons: [PanoButton(vector: SCNVector3Make(90,0,0), desc: "landmark 1, button 1"), PanoButton(vector: SCNVector3Make(0,90,0), desc: "landmark 1, button 2"), PanoButton(vector: SCNVector3Make(0,0,90), desc: "landmark 1, button 3")])
+    let landmark2 = Landmark(name: "Landmark #2", panoImage: UIImage(imageLiteralResourceName: "landmark2.jpg"), panoButtons: [PanoButton(vector: SCNVector3Make(-90,0,0), desc: "landmark 2, button 1"), PanoButton(vector: SCNVector3Make(0,-90,0), desc: "landmark 2, button 2"), PanoButton(vector: SCNVector3Make(0,0,-90), desc: "landmark 2, button 3")])
+    
+    func toggleLandmark() {
+        if currentLandmark == landmark1 {
+            currentLandmark = landmark2
+        } else {
+            currentLandmark = landmark1
+        }
+    }
+    init() {
+        currentLandmark = landmark1
+    }
+    
+}
+
 
 let backgroundColor = Color(white: 0.12, opacity: 1)
+let textColor = Color.white
 
+
+struct LargeTitle: ViewModifier {
+    let font = Font.system(.largeTitle).weight(.bold)
+    func body(content: Content) -> some View {
+        content
+            .font(font)
+            .foregroundColor(textColor)
+    }
+}
 
 struct Title: ViewModifier {
+    let font = Font.system(.title).weight(.semibold)
+    func body(content: Content) -> some View {
+        content
+            .font(font)
+            .foregroundColor(textColor)
+    }
+}
+
+
+struct Headline: ViewModifier {
+    let font = Font.system(.headline)//.weight(.bold)
+    func body(content: Content) -> some View {
+        content
+            .font(font)
+            .foregroundColor(textColor)
+    }
+}
+
+
+struct GradientText: ViewModifier {
+    let font = Font.system(.largeTitle).weight(.semibold)
     func body(content: Content) -> some View {
         content
             .font(.largeTitle)
-            //.fontWeight(.bold)
             .foregroundColor(Color.white)
-    }
-}
-extension View {
-    func title() -> some View {
-        self.modifier(Title())
+            //.fontWeight(.bold)
     }
 }
 
+
+
+extension View {
+    func largeTitle() -> some View {
+        self.modifier(LargeTitle())
+    }
+    func title() -> some View {
+        self.modifier(Title())
+    }
+    func headline() -> some View {
+        self.modifier(Headline())
+    }
+    func gradientText() -> some View {
+        self.modifier(GradientText())
+    }
+}
+
+extension Image {
+    func headlineImage() -> some View {
+        self
+            .resizable()
+            .foregroundColor(textColor)
+            .frame(width: 30, height: 30)
+    }
+}
+
+
+extension AnyTransition {
+    static var moveAndFade: AnyTransition {
+        let insertion = AnyTransition.move(edge: .top)
+        let removal = AnyTransition.move(edge: .top)
+        return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
+
+
+
+
 struct ContentView: View {
+    @State var showWelcome = true
+    //@EnvironmentObject var selections: Selections
     var body: some View {
         ZStack(alignment: .leading) {
-            backgroundColor
+            //backgroundColor
+            Color(white: 0.8, opacity: 1)
                 .edgesIgnoringSafeArea(.all)
-            VStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Welcome to")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.white)
-                        Spacer()
-                    }
-                    Text("Shaker Forest Thick Map")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color(white: 1, opacity: 0))
-                        .background(LinearGradient(gradient: Gradient(colors: [.pink, .orange]), startPoint: .topLeading, endPoint: .bottomTrailing))
-                        .mask(Text("Shaker Forest Thick Map")
-                            .font(.title)
-                            .fontWeight(.semibold))
-                }.padding(.bottom, 40.0)
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Features")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.white)
-                        Spacer()
-                    }
-                    HStack {
-                        Image("map.fill")
-                        .resizable()
-                        .foregroundColor(Color.white)
-                        .frame(width: 30, height: 30)
-                            .padding(.trailing)
-                        Text("Annotated map of Shaker Forest and its landmarks")
-                            .font(.headline)
-                            .foregroundColor(Color.white)
-                    }.padding([.bottom, .leading, .trailing])
-                    HStack {
-                        Image("qrcode")
-                        .resizable()
-                        .foregroundColor(Color.white)
-                        .frame(width: 30, height: 30)
-                            .padding(.trailing)
-                        Text("QR Code scanning to view annotations in the forest")
-                            .font(.headline)
-                            .foregroundColor(Color.white)
-                    }.padding([.bottom, .leading, .trailing])
-                    HStack {
-                        Image("arrow.left.and.right")
-                        .resizable()
-                        .foregroundColor(Color.white)
-                        .frame(width: 30, height: 30)
-                            .padding(.trailing)
-                        Text("360° view of historical forest view at landmark sites")
-                            .font(.headline)
-                            .foregroundColor(Color.white)
-                    }.padding([.bottom, .leading, .trailing])
-                }
-                Spacer()
-                Button(action: {
-                    print("button press")
-                    }) {
-                        HStack(alignment: .center) {
-                            Text("Continue")
-                            .font(.title)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.white)
-                            .padding([.top, .bottom], 10.0)
-                            .padding([.leading, .trailing], 50.0)
-                            .background(Color.blue
-                            .cornerRadius(25))
-                        }
-                }
-            }.padding(20.0)
+                .zIndex(0)
+            if showWelcome {
+                WelcomeView(showWelcome: self.$showWelcome)
+                    .transition(.move(edge: .top))
+                    .zIndex(2)
+            }
+            PanoView().zIndex(1) //TEMP - MapView will go here
         }
     }
 }

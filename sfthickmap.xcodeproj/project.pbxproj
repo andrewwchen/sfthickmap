@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493AE1F7250184B5004BCDC2 /* PanoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AE1F6250184B5004BCDC2 /* PanoImageView.swift */; };
+		495009E32504AAAD0054CB50 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495009E22504AAAD0054CB50 /* MapView.swift */; };
+		495009E52504ABE50054CB50 /* PanoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495009E42504ABE50054CB50 /* PanoView.swift */; };
+		49A628BE2500B413009BCD30 /* CTPanoramaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A628BC2500B413009BCD30 /* CTPanoramaView.swift */; };
+		49A628C12500C5EF009BCD30 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A628C02500C5EF009BCD30 /* WelcomeView.swift */; };
 		49EB001B24F62458002202FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB001A24F62458002202FA /* AppDelegate.swift */; };
 		49EB001D24F62458002202FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB001C24F62458002202FA /* SceneDelegate.swift */; };
 		49EB002024F62458002202FA /* sfthickmap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49EB001E24F62458002202FA /* sfthickmap.xcdatamodeld */; };
@@ -37,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		493AE1F6250184B5004BCDC2 /* PanoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoImageView.swift; sourceTree = "<group>"; };
+		495009E22504AAAD0054CB50 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		495009E42504ABE50054CB50 /* PanoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoView.swift; sourceTree = "<group>"; };
+		49A628BC2500B413009BCD30 /* CTPanoramaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTPanoramaView.swift; sourceTree = "<group>"; };
+		49A628C02500C5EF009BCD30 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		49EB001724F62458002202FA /* sfthickmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sfthickmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EB001A24F62458002202FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49EB001C24F62458002202FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,9 +114,14 @@
 		49EB001924F62458002202FA /* sfthickmap */ = {
 			isa = PBXGroup;
 			children = (
+				49A628C02500C5EF009BCD30 /* WelcomeView.swift */,
+				495009E22504AAAD0054CB50 /* MapView.swift */,
+				49A628BC2500B413009BCD30 /* CTPanoramaView.swift */,
+				493AE1F6250184B5004BCDC2 /* PanoImageView.swift */,
+				495009E42504ABE50054CB50 /* PanoView.swift */,
+				49EB002124F62458002202FA /* ContentView.swift */,
 				49EB001A24F62458002202FA /* AppDelegate.swift */,
 				49EB001C24F62458002202FA /* SceneDelegate.swift */,
-				49EB002124F62458002202FA /* ContentView.swift */,
 				49EB002324F62459002202FA /* Assets.xcassets */,
 				49EB002824F62459002202FA /* LaunchScreen.storyboard */,
 				49EB002B24F62459002202FA /* Info.plist */,
@@ -275,9 +290,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EB001B24F62458002202FA /* AppDelegate.swift in Sources */,
+				495009E52504ABE50054CB50 /* PanoView.swift in Sources */,
 				49EB001D24F62458002202FA /* SceneDelegate.swift in Sources */,
+				49A628BE2500B413009BCD30 /* CTPanoramaView.swift in Sources */,
 				49EB002224F62458002202FA /* ContentView.swift in Sources */,
+				493AE1F7250184B5004BCDC2 /* PanoImageView.swift in Sources */,
 				49EB002024F62458002202FA /* sfthickmap.xcdatamodeld in Sources */,
+				495009E32504AAAD0054CB50 /* MapView.swift in Sources */,
+				49A628C12500C5EF009BCD30 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
