@@ -59,19 +59,6 @@ public class Landmark: NSObject {
 }
 
 
-/*
-class Coordinator: NSObject, UIFontPickerViewControllerDelegate {
-    var parent: FontPicker
-
-    init(_ parent: FontPicker) {
-        self.parent = parent
-    }
-
-    func fontPickerViewControllerDidPickFont(_ viewController: UIFontPickerViewController) {
-        parent.font = viewController.selectedFontDescriptor
-    }
-}
-*/
 
 
 struct PanoImageView: UIViewRepresentable {

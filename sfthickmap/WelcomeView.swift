@@ -71,7 +71,6 @@ struct WelcomeView: View {
                             .padding([.leading, .trailing], 50.0)
                             .background(Color.blue
                             .cornerRadius(25))
-                            
                         }
                 }
             }.padding(20.0)
