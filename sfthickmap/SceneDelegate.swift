@@ -12,9 +12,12 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var selections = Selections()
+    //var selections = Selections()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        window?.rootViewController = UIHostingController(rootView:
+            ContentView().environmentObject(appDelegate.selections))
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
@@ -24,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        let contentView = ContentView().environment(\.managedObjectContext, context).environmentObject(selections)
+        let contentView = ContentView().environment(\.managedObjectContext, context).environmentObject(appDelegate.selections)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

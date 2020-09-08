@@ -11,9 +11,7 @@ import SceneKit
 
 struct PanoView: View {
     @EnvironmentObject var selections: Selections
-    @State var currentButton: PanoButton?
     var body: some View {
-        
         ZStack() {
             if self.selections.currentLandmark != nil {
                 PanoImageView()
@@ -25,11 +23,6 @@ struct PanoView: View {
                         .headline()
                         .padding()
                     Spacer()
-                    if self.currentButton != nil {
-                        Text(self.currentButton!.desc)
-                    } else {
-                        Text("Click a button")
-                    }
                     Button(action: {
                         self.selections.toggleLandmark()
                         }) {
@@ -41,12 +34,16 @@ struct PanoView: View {
                                 .cornerRadius(25))
                     }
                 }.zIndex(1)
+                
             }
-            
-            
+            if selections.currentButton != nil {
+                PanoDetailView()
+                    .transition(.move(edge: .bottom))
+                    .zIndex(2)
+            }
         }
-
     }
+    
 }
 
 struct PanoView_Previews: PreviewProvider {

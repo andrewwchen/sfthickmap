@@ -8,11 +8,12 @@
 
 import UIKit
 import CoreData
+import SwiftUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var selections = Selections()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -80,3 +81,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+
+    func updateLandmark(currentLandmark: Landmark?) {
+        self.selections.currentLandmark = currentLandmark
+    }
+    func updateButton(currentButton: PanoButton?) {
+        withAnimation {
+            self.selections.currentButton = currentButton
+        }
+    }
+    func getLandmark() -> Landmark? {
+        return self.selections.currentLandmark
+    }
+    func getButton() -> PanoButton? {
+        return self.selections.currentButton
+    }
+}

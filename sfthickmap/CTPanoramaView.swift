@@ -43,7 +43,6 @@ import SwiftUI
     @objc public var panSpeed = CGPoint(x: 0.005, y: 0.005)
     @objc public var startAngle: Float = 0
     
-    @objc public var currentButton: PanoButton?
     @objc public var buttons: [PanoButton]? {
         didSet {
             createButtonsNodes()
@@ -87,6 +86,9 @@ import SwiftUI
     private var oldButtons: [PanoButton]?
     private var prevLocation = CGPoint.zero
     private var prevBounds = CGRect.zero
+    
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     private lazy var cameraNode: SCNNode = {
         let node = SCNNode()
         let camera = SCNCamera()
@@ -156,7 +158,6 @@ import SwiftUI
         // Force Swift to call the property observer by calling the setter from a non-init context
         ({ self.image = image })()
         ({ self.buttons = buttons })()
-        ({ self.currentButton = nil })()
     }
 
     deinit {
@@ -180,6 +181,8 @@ import SwiftUI
     // MARK: Configuration helper methods
     
     private func createButtonsNodes() {
+        let gottenButton = appDelegate.getButton()
+
         if oldButtons != nil {
             for b in oldButtons! {
                 b.node.removeFromParentNode()
@@ -187,7 +190,17 @@ import SwiftUI
             }
         }
         if buttons != nil {
+            if gottenButton != nil {
+                if !buttons!.contains(gottenButton!) {
+                    appDelegate.updateButton(currentButton: nil)
+                }
+            }
             for b in buttons! {
+                if b == gottenButton {
+                    b.highlight()
+                } else {
+                    b.unhighlight()
+                }
                 scene.rootNode.addChildNode(b.node)
             }
         }
@@ -306,13 +319,12 @@ import SwiftUI
             let hits = self.sceneView.hitTest(point, options: nil)
             if let tappedNode = hits.first?.node {
                 //print(tappedNode)
-                if let name = tappedNode.name {
-                    print(name)
+                if tappedNode.name != nil && tappedNode != appDelegate.getButton()?.node{
                     for b in buttons! {
                         b.unhighlight()
                         if b.node == tappedNode {
                             b.highlight()
-                            self.currentButton = b
+                            b.select()
                         }
                     }
                 }
