@@ -12,8 +12,10 @@ struct PanoDetailView: View {
     @EnvironmentObject var selections: Selections
     var body: some View {
         NavigationView {
-            Text(selections.getButtonDesc())
-                .navigationBarTitle(Text(selections.getButtonName()), displayMode: .inline)
+            let buttonName = selections.getButtonName()
+            let buttonDesc = selections.getButtonDesc()
+            Text(buttonDesc)
+                .navigationBarTitle(Text(buttonName), displayMode: .inline)
                 .navigationBarItems(trailing: Button(action: {
                     withAnimation {
                         self.selections.currentButton = nil

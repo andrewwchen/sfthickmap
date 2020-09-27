@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23E2A3145AE8B84ADFCF491B /* Pods_sfthickmap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCD93C9A46493342CA83F73 /* Pods_sfthickmap.framework */; };
 		493AE1F7250184B5004BCDC2 /* PanoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AE1F6250184B5004BCDC2 /* PanoImageView.swift */; };
 		495009E32504AAAD0054CB50 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495009E22504AAAD0054CB50 /* MapView.swift */; };
 		495009E52504ABE50054CB50 /* PanoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495009E42504ABE50054CB50 /* PanoView.swift */; };
@@ -23,6 +24,8 @@
 		49EB003524F62459002202FA /* sfthickmapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB003424F62459002202FA /* sfthickmapTests.swift */; };
 		49EB004024F62459002202FA /* sfthickmapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB003F24F62459002202FA /* sfthickmapUITests.swift */; };
 		49EB004E24F62529002202FA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49EB004D24F62529002202FA /* README.md */; };
+		6ED1C08599017BCCE71C707B /* Pods_sfthickmapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04E09FCF8187E35A769D092 /* Pods_sfthickmapTests.framework */; };
+		E43313D061A1DCB5A99187A3 /* Pods_sfthickmap_sfthickmapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42C772CB2AA0606F09A61EF /* Pods_sfthickmap_sfthickmapUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EECF6146BAE54DC1B704B98 /* Pods-sfthickmapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmapTests.release.xcconfig"; path = "Target Support Files/Pods-sfthickmapTests/Pods-sfthickmapTests.release.xcconfig"; sourceTree = "<group>"; };
 		493AE1F6250184B5004BCDC2 /* PanoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoImageView.swift; sourceTree = "<group>"; };
 		495009E22504AAAD0054CB50 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		495009E42504ABE50054CB50 /* PanoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoView.swift; sourceTree = "<group>"; };
@@ -65,6 +69,14 @@
 		49EB003F24F62459002202FA /* sfthickmapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sfthickmapUITests.swift; sourceTree = "<group>"; };
 		49EB004124F62459002202FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49EB004D24F62529002202FA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4CD3B96B8B5679BD76067356 /* Pods-sfthickmap-sfthickmapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmap-sfthickmapUITests.release.xcconfig"; path = "Target Support Files/Pods-sfthickmap-sfthickmapUITests/Pods-sfthickmap-sfthickmapUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7E8AF046964DFD34687FAEEA /* Pods-sfthickmap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmap.debug.xcconfig"; path = "Target Support Files/Pods-sfthickmap/Pods-sfthickmap.debug.xcconfig"; sourceTree = "<group>"; };
+		CDE376AB89E9D316DA41F910 /* Pods-sfthickmap-sfthickmapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmap-sfthickmapUITests.debug.xcconfig"; path = "Target Support Files/Pods-sfthickmap-sfthickmapUITests/Pods-sfthickmap-sfthickmapUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D04E09FCF8187E35A769D092 /* Pods_sfthickmapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sfthickmapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED905F3663B5DC1AAC99EB42 /* Pods-sfthickmapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmapTests.debug.xcconfig"; path = "Target Support Files/Pods-sfthickmapTests/Pods-sfthickmapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EFCD93C9A46493342CA83F73 /* Pods_sfthickmap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sfthickmap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42C772CB2AA0606F09A61EF /* Pods_sfthickmap_sfthickmapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sfthickmap_sfthickmapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5A8AC5EA2D3491765DE0B3B /* Pods-sfthickmap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmap.release.xcconfig"; path = "Target Support Files/Pods-sfthickmap/Pods-sfthickmap.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23E2A3145AE8B84ADFCF491B /* Pods_sfthickmap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ED1C08599017BCCE71C707B /* Pods_sfthickmapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +100,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43313D061A1DCB5A99187A3 /* Pods_sfthickmap_sfthickmapUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46494BDA11D972B6E8120BD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFCD93C9A46493342CA83F73 /* Pods_sfthickmap.framework */,
+				F42C772CB2AA0606F09A61EF /* Pods_sfthickmap_sfthickmapUITests.framework */,
+				D04E09FCF8187E35A769D092 /* Pods_sfthickmapTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		49EB000E24F62458002202FA = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +125,8 @@
 				49EB003324F62459002202FA /* sfthickmapTests */,
 				49EB003E24F62459002202FA /* sfthickmapUITests */,
 				49EB001824F62458002202FA /* Products */,
+				F2907246C1F7B9C6416279AA /* Pods */,
+				46494BDA11D972B6E8120BD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +187,20 @@
 			path = sfthickmapUITests;
 			sourceTree = "<group>";
 		};
+		F2907246C1F7B9C6416279AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E8AF046964DFD34687FAEEA /* Pods-sfthickmap.debug.xcconfig */,
+				F5A8AC5EA2D3491765DE0B3B /* Pods-sfthickmap.release.xcconfig */,
+				CDE376AB89E9D316DA41F910 /* Pods-sfthickmap-sfthickmapUITests.debug.xcconfig */,
+				4CD3B96B8B5679BD76067356 /* Pods-sfthickmap-sfthickmapUITests.release.xcconfig */,
+				ED905F3663B5DC1AAC99EB42 /* Pods-sfthickmapTests.debug.xcconfig */,
+				2EECF6146BAE54DC1B704B98 /* Pods-sfthickmapTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49EB004424F62459002202FA /* Build configuration list for PBXNativeTarget "sfthickmap" */;
 			buildPhases = (
+				32E205E9322B98DAD9360953 /* [CP] Check Pods Manifest.lock */,
 				49EB001324F62458002202FA /* Sources */,
 				49EB001424F62458002202FA /* Frameworks */,
 				49EB001524F62458002202FA /* Resources */,
+				EE83BCDC91552042D5EF768A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49EB004724F62459002202FA /* Build configuration list for PBXNativeTarget "sfthickmapTests" */;
 			buildPhases = (
+				14D9D4DF5497E7E22B9F306E /* [CP] Check Pods Manifest.lock */,
 				49EB002C24F62459002202FA /* Sources */,
 				49EB002D24F62459002202FA /* Frameworks */,
 				49EB002E24F62459002202FA /* Resources */,
@@ -202,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49EB004A24F62459002202FA /* Build configuration list for PBXNativeTarget "sfthickmapUITests" */;
 			buildPhases = (
+				9C288E3A7C2761F87DC2ED25 /* [CP] Check Pods Manifest.lock */,
 				49EB003724F62459002202FA /* Sources */,
 				49EB003824F62459002202FA /* Frameworks */,
 				49EB003924F62459002202FA /* Resources */,
+				2EFDD4EB2ECC9E86E1BF4205 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,7 +269,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Dartmouth DEV Studio";
 				TargetAttributes = {
 					49EB001624F62458002202FA = {
@@ -286,6 +332,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14D9D4DF5497E7E22B9F306E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sfthickmapTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EFDD4EB2ECC9E86E1BF4205 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sfthickmap-sfthickmapUITests/Pods-sfthickmap-sfthickmapUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sfthickmap-sfthickmapUITests/Pods-sfthickmap-sfthickmapUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sfthickmap-sfthickmapUITests/Pods-sfthickmap-sfthickmapUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32E205E9322B98DAD9360953 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sfthickmap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C288E3A7C2761F87DC2ED25 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sfthickmap-sfthickmapUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE83BCDC91552042D5EF768A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sfthickmap/Pods-sfthickmap-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sfthickmap/Pods-sfthickmap-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sfthickmap/Pods-sfthickmap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		49EB001324F62458002202FA /* Sources */ = {
@@ -374,6 +523,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -434,6 +584,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -464,6 +615,7 @@
 		};
 		49EB004524F62459002202FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E8AF046964DFD34687FAEEA /* Pods-sfthickmap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -485,6 +637,7 @@
 		};
 		49EB004624F62459002202FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5A8AC5EA2D3491765DE0B3B /* Pods-sfthickmap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -506,6 +659,7 @@
 		};
 		49EB004824F62459002202FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED905F3663B5DC1AAC99EB42 /* Pods-sfthickmapTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +682,7 @@
 		};
 		49EB004924F62459002202FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EECF6146BAE54DC1B704B98 /* Pods-sfthickmapTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,6 +705,7 @@
 		};
 		49EB004B24F62459002202FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDE376AB89E9D316DA41F910 /* Pods-sfthickmap-sfthickmapUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -570,6 +726,7 @@
 		};
 		49EB004C24F62459002202FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CD3B96B8B5679BD76067356 /* Pods-sfthickmap-sfthickmapUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
