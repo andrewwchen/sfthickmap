@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		23E2A3145AE8B84ADFCF491B /* Pods_sfthickmap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCD93C9A46493342CA83F73 /* Pods_sfthickmap.framework */; };
 		493AE1F7250184B5004BCDC2 /* PanoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AE1F6250184B5004BCDC2 /* PanoImageView.swift */; };
+		494F0EFA2521346D00BF4441 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F0EF92521346D00BF4441 /* Constants.swift */; };
 		495009E32504AAAD0054CB50 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495009E22504AAAD0054CB50 /* MapView.swift */; };
 		495009E52504ABE50054CB50 /* PanoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495009E42504ABE50054CB50 /* PanoView.swift */; };
 		49A4B7702506E3FD00C9284B /* PanoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4B76F2506E3FD00C9284B /* PanoDetailView.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		2EECF6146BAE54DC1B704B98 /* Pods-sfthickmapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmapTests.release.xcconfig"; path = "Target Support Files/Pods-sfthickmapTests/Pods-sfthickmapTests.release.xcconfig"; sourceTree = "<group>"; };
 		493AE1F6250184B5004BCDC2 /* PanoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoImageView.swift; sourceTree = "<group>"; };
+		494F0EF92521346D00BF4441 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		495009E22504AAAD0054CB50 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		495009E42504ABE50054CB50 /* PanoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoView.swift; sourceTree = "<group>"; };
 		49A4B76F2506E3FD00C9284B /* PanoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoDetailView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				49EB002B24F62459002202FA /* Info.plist */,
 				49EB001E24F62458002202FA /* sfthickmap.xcdatamodeld */,
 				49EB002524F62459002202FA /* Preview Content */,
+				494F0EF92521346D00BF4441 /* Constants.swift */,
 			);
 			path = sfthickmap;
 			sourceTree = "<group>";
@@ -197,7 +200,6 @@
 				ED905F3663B5DC1AAC99EB42 /* Pods-sfthickmapTests.debug.xcconfig */,
 				2EECF6146BAE54DC1B704B98 /* Pods-sfthickmapTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -442,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EB001B24F62458002202FA /* AppDelegate.swift in Sources */,
+				494F0EFA2521346D00BF4441 /* Constants.swift in Sources */,
 				495009E52504ABE50054CB50 /* PanoView.swift in Sources */,
 				49EB001D24F62458002202FA /* SceneDelegate.swift in Sources */,
 				49A628BE2500B413009BCD30 /* CTPanoramaView.swift in Sources */,

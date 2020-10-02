@@ -1,0 +1,6 @@
+framework module Pods_sfthickmap_sfthickmapUITests {
+  umbrella header "Pods-sfthickmap-sfthickmapUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
