@@ -91,6 +91,12 @@ extension AppDelegate {
             self.selections.currentButton = currentButton
         }
     }
+    func updateAnnotation(currentAnnotation: UpdatablePointAnnotation?) {
+        withAnimation {
+            self.selections.currentAnnotation = currentAnnotation
+            print(currentAnnotation!.title)
+        }
+    }
     func getLandmark() -> Landmark? {
         return self.selections.currentLandmark
     }

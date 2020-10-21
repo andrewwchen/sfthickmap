@@ -9,7 +9,9 @@
 import SwiftUI
 import SceneKit
 import Combine
-
+import MapKit
+import UIKit
+import PartialSheet
 
 public class PanoButton: NSObject {
     //@EnvironmentObject var selections: Selections
@@ -36,6 +38,8 @@ public class PanoButton: NSObject {
         self.vector = vector
         self.desc = desc
         self.name = name
+
+            
         let icon1 = "plus.circle.fill"
         let icon2 = "plus.circle"
         let color = UIColor(ciColor: .white)
@@ -53,15 +57,52 @@ public class PanoButton: NSObject {
     }
 }
 
+class UpdatablePointAnnotation: MKPointAnnotation {
 
-public class Landmark: NSObject {
-    var name: String
+    // This property must be key-value observable, which the `@objc dynamic` attributes provide.
+    /*
+    @objc dynamic var coordinate: CLLocationCoordinate2D
+    
+    var title: String?
+    
+    var subtitle: String?
+    
+    var imageName: String?
+    
+    init(coordinate: CLLocationCoordinate2D) {
+        self.coordinate = coordinate
+        super.init()
+    }
+     */
+    var desc: String?
+    func select() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.updateAnnotation(currentAnnotation: self)
+    }
+    init (desc: String?=nil) {
+        self.desc = desc
+    }
+}
+
+
+public class Landmark: NSObject, MKAnnotation {
+    public var title: String?
+    public var subtitle: String?
+    var desc: String?
+    var previewImage: UIImage?
     var panoImage: UIImage
     var panoButtons: [PanoButton]
-    init (name: String, panoImage: UIImage, panoButtons: [PanoButton]){
-        self.name = name
+    @objc dynamic public var coordinate: CLLocationCoordinate2D
+    
+
+    init (title: String?, desc: String? = nil, previewImage: UIImage? = nil, panoImage: UIImage, panoButtons: [PanoButton], latitude: Double, longitude: Double){
+        self.title = title
+        self.desc = desc
+        self.previewImage = previewImage
         self.panoImage = panoImage
         self.panoButtons = panoButtons
+        self.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        
     }
 }
 
@@ -69,8 +110,9 @@ public class Landmark: NSObject {
 class Selections: ObservableObject {
     @Published var currentLandmark: Landmark?
     @Published var currentButton: PanoButton?
-    let landmark1 = Landmark(name: "Landmark #1", panoImage: UIImage(imageLiteralResourceName: "landmark1.jpg"), panoButtons: [PanoButton(name: "lb1", desc: "landmark 1, button 1", vector: SCNVector3Make(90,0,0)), PanoButton(name: "l1b2", desc: "landmark 1, button 2", vector: SCNVector3Make(0,90,0)), PanoButton(name: "l1b3", desc: "landmark 1, button 3", vector: SCNVector3Make(0,0,90))])
-    let landmark2 = Landmark(name: "Landmark #2", panoImage: UIImage(imageLiteralResourceName: "landmark2.jpg"), panoButtons: [PanoButton(name: "l2b1", desc: "landmark 2, button 1", vector: SCNVector3Make(-90,0,0)), PanoButton(name: "l2b2", desc: "landmark 2, button 2", vector: SCNVector3Make(0,-90,0)), PanoButton(name: "l2b3", desc: "landmark 2, button 3", vector: SCNVector3Make(0,0,-90))])
+    @Published var currentAnnotation: UpdatablePointAnnotation?
+    let landmark1 = Landmark(title: "Landmark #1", desc: "landmark #1 description test teste set se test est sdtets est se test estsetests e tst set est esetstst", panoImage: UIImage(imageLiteralResourceName: "landmark1.jpg"), panoButtons: [PanoButton(name: "lb1", desc: "landmark 1, button 1", vector: SCNVector3Make(90,0,0)), PanoButton(name: "l1b2", desc: "landmark 1, button 2", vector: SCNVector3Make(0,90,0)), PanoButton(name: "l1b3", desc: "landmark 1, button 3", vector: SCNVector3Make(0,0,90))], latitude: 43.702634, longitude: -72.286260)
+    let landmark2 = Landmark(title: "Landmark #2", panoImage: UIImage(imageLiteralResourceName: "landmark2.jpg"), panoButtons: [PanoButton(name: "l2b1", desc: "landmark 2, button 1", vector: SCNVector3Make(-90,0,0)), PanoButton(name: "l2b2", desc: "landmark 2, button 2", vector: SCNVector3Make(0,-90,0)), PanoButton(name: "l2b3", desc: "landmark 2, button 3", vector: SCNVector3Make(0,0,-90))], latitude: 43.703127, longitude: -72.285018)
     
     func toggleLandmark() {
         if currentLandmark == landmark1 {
@@ -186,17 +228,34 @@ struct ContentView: View {
     @State var showWelcome = true
     @State var showPanoDetail = false
     @EnvironmentObject var selections: Selections
+    @EnvironmentObject var partialSheetManager: PartialSheetManager
     var body: some View {
         ZStack(alignment: .leading) {
             //backgroundColor
             Color(white: 0.8, opacity: 1)
                 .edgesIgnoringSafeArea(.all)
                 .zIndex(0)
-
-            PanoView().zIndex(1) //TEMP - MapView will go here
+            MapView().zIndex(1).edgesIgnoringSafeArea([.all])
+            
+            //PanoView().zIndex(1) //TEMP - MapView will go here
+            Button(action: {
+                self.partialSheetManager.showPartialSheet({
+                    print("Partial sheet dismissed")
+                }) {
+                     AnnotationDetailView()
+                }
+            }, label: {
+                Text("Show sheet")
+            }).zIndex(2)
+            .sheet(isPresented: $showWelcome) {
+                AnnotationDetailView()
+            }
+            /*
             .sheet(isPresented: $showWelcome) {
                 WelcomeView(showWelcome: self.$showWelcome)
             }
+            */
+
         }
     }
 }

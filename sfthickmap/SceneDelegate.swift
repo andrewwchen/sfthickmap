@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import PartialSheet
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -27,8 +28,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
+        let sheetManager: PartialSheetManager = PartialSheetManager()
         let contentView = ContentView().environment(\.managedObjectContext, context).environmentObject(appDelegate.selections)
-
+            .environmentObject(sheetManager)
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
@@ -68,7 +70,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
-
+    
 
 }
 

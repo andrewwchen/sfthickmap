@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,9 +15,10 @@
 		49A4B7702506E3FD00C9284B /* PanoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4B76F2506E3FD00C9284B /* PanoDetailView.swift */; };
 		49A628BE2500B413009BCD30 /* CTPanoramaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A628BC2500B413009BCD30 /* CTPanoramaView.swift */; };
 		49A628C12500C5EF009BCD30 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A628C02500C5EF009BCD30 /* WelcomeView.swift */; };
+		49AADA6025400FAA00B5F239 /* AnnotationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AADA5F25400FAA00B5F239 /* AnnotationDetailView.swift */; };
+		49AADA6C254080C400B5F239 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 49AADA6B254080C400B5F239 /* PartialSheet */; };
 		49EB001B24F62458002202FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB001A24F62458002202FA /* AppDelegate.swift */; };
 		49EB001D24F62458002202FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB001C24F62458002202FA /* SceneDelegate.swift */; };
-		49EB002024F62458002202FA /* sfthickmap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49EB001E24F62458002202FA /* sfthickmap.xcdatamodeld */; };
 		49EB002224F62458002202FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB002124F62458002202FA /* ContentView.swift */; };
 		49EB002424F62459002202FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EB002324F62459002202FA /* Assets.xcassets */; };
 		49EB002724F62459002202FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EB002624F62459002202FA /* Preview Assets.xcassets */; };
@@ -55,10 +56,10 @@
 		49A4B76F2506E3FD00C9284B /* PanoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoDetailView.swift; sourceTree = "<group>"; };
 		49A628BC2500B413009BCD30 /* CTPanoramaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTPanoramaView.swift; sourceTree = "<group>"; };
 		49A628C02500C5EF009BCD30 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		49AADA5F25400FAA00B5F239 /* AnnotationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDetailView.swift; sourceTree = "<group>"; };
 		49EB001724F62458002202FA /* sfthickmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sfthickmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EB001A24F62458002202FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49EB001C24F62458002202FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		49EB001F24F62458002202FA /* sfthickmap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sfthickmap.xcdatamodel; sourceTree = "<group>"; };
 		49EB002124F62458002202FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		49EB002324F62459002202FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49EB002624F62459002202FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49AADA6C254080C400B5F239 /* PartialSheet in Frameworks */,
 				23E2A3145AE8B84ADFCF491B /* Pods_sfthickmap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,13 +153,13 @@
 				495009E42504ABE50054CB50 /* PanoView.swift */,
 				49A628C02500C5EF009BCD30 /* WelcomeView.swift */,
 				495009E22504AAAD0054CB50 /* MapView.swift */,
+				49AADA5F25400FAA00B5F239 /* AnnotationDetailView.swift */,
 				49EB002124F62458002202FA /* ContentView.swift */,
 				49EB001A24F62458002202FA /* AppDelegate.swift */,
 				49EB001C24F62458002202FA /* SceneDelegate.swift */,
 				49EB002324F62459002202FA /* Assets.xcassets */,
 				49EB002824F62459002202FA /* LaunchScreen.storyboard */,
 				49EB002B24F62459002202FA /* Info.plist */,
-				49EB001E24F62458002202FA /* sfthickmap.xcdatamodeld */,
 				49EB002524F62459002202FA /* Preview Content */,
 				494F0EF92521346D00BF4441 /* Constants.swift */,
 			);
@@ -221,6 +223,9 @@
 			dependencies = (
 			);
 			name = sfthickmap;
+			packageProductDependencies = (
+				49AADA6B254080C400B5F239 /* PartialSheet */,
+			);
 			productName = sfthickmap;
 			productReference = 49EB001724F62458002202FA /* sfthickmap.app */;
 			productType = "com.apple.product-type.application";
@@ -296,6 +301,9 @@
 				Base,
 			);
 			mainGroup = 49EB000E24F62458002202FA;
+			packageReferences = (
+				49AADA6A254080C400B5F239 /* XCRemoteSwiftPackageReference "PartialSheet" */,
+			);
 			productRefGroup = 49EB001824F62458002202FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -445,12 +453,12 @@
 			files = (
 				49EB001B24F62458002202FA /* AppDelegate.swift in Sources */,
 				494F0EFA2521346D00BF4441 /* Constants.swift in Sources */,
+				49AADA6025400FAA00B5F239 /* AnnotationDetailView.swift in Sources */,
 				495009E52504ABE50054CB50 /* PanoView.swift in Sources */,
 				49EB001D24F62458002202FA /* SceneDelegate.swift in Sources */,
 				49A628BE2500B413009BCD30 /* CTPanoramaView.swift in Sources */,
 				49EB002224F62458002202FA /* ContentView.swift in Sources */,
 				493AE1F7250184B5004BCDC2 /* PanoImageView.swift in Sources */,
-				49EB002024F62458002202FA /* sfthickmap.xcdatamodeld in Sources */,
 				49A4B7702506E3FD00C9284B /* PanoDetailView.swift in Sources */,
 				495009E32504AAAD0054CB50 /* MapView.swift in Sources */,
 				49A628C12500C5EF009BCD30 /* WelcomeView.swift in Sources */,
@@ -789,18 +797,24 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		49EB001E24F62458002202FA /* sfthickmap.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				49EB001F24F62458002202FA /* sfthickmap.xcdatamodel */,
-			);
-			currentVersion = 49EB001F24F62458002202FA /* sfthickmap.xcdatamodel */;
-			path = sfthickmap.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCRemoteSwiftPackageReference section */
+		49AADA6A254080C400B5F239 /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.11;
+			};
 		};
-/* End XCVersionGroup section */
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		49AADA6B254080C400B5F239 /* PartialSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49AADA6A254080C400B5F239 /* XCRemoteSwiftPackageReference "PartialSheet" */;
+			productName = PartialSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49EB000F24F62458002202FA /* Project object */;
 }

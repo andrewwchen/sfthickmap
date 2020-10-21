@@ -19,9 +19,12 @@ struct PanoView: View {
                     .edgesIgnoringSafeArea(.all)
                     .zIndex(0)
                 VStack() {
-                    Text(self.selections.currentLandmark!.name)
-                        .headline()
-                        .padding()
+                    if self.selections.currentLandmark!.title != nil {
+                        Text(self.selections.currentLandmark!.title!)
+                            .headline()
+                            .padding()
+                    }
+
                     Spacer()
                     Button(action: {
                         self.selections.toggleLandmark()
