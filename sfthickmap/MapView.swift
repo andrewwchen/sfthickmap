@@ -26,27 +26,29 @@ struct MapView: UIViewRepresentable {
         mapView.userTrackingMode = .follow
         mapView.mapType = .satelliteFlyover
     
-    // SAMPLE REGIOn
-    let mapCenter = CLLocationCoordinate2DMake(43.702634, -72.286260)
-    let mapRegion = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 1000, longitudinalMeters: 1000)
-    mapView.setRegion(mapRegion, animated: true)
-    mapView.showsCompass = true
-    mapView.showsScale = true
-    
-    // SAMPLE LANDMARKS
-    let landmarks = [selections.landmark1, selections.landmark2]
-
-    for l in landmarks {
-        let annotation = UpdatablePointAnnotation()
-        annotation.title = l.title
-        //annotation.subtitle = l.desc
-        annotation.coordinate = l.coordinate
-        //annotation.calloutEnabled = true
-        mapView.addAnnotation(annotation)
+        // SAMPLE REGION
+        let mapCenter = CLLocationCoordinate2DMake(43.702634, -72.286260)
+        let mapRegion = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        mapView.setRegion(mapRegion, animated: true)
+        mapView.showsCompass = true
+        mapView.showsScale = true
+        
+        // SAMPLE LANDMARKS
+        let landmarks = [selections.landmark1, selections.landmark2]
+        var nextID = 0
+        for l in landmarks {
+            let annotation = UpdatablePointAnnotation()
+            annotation.title = l.title
+            //annotation.subtitle = l.desc
+            annotation.coordinate = l.coordinate
+            annotation.id = nextID
+            nextID += 1
+            //annotation.calloutEnabled = true
+            mapView.addAnnotation(annotation)
+        }
+    return mapView
     }
     
-    return mapView
-  }
     func updateUIView(_ uiView: MKMapView, context: Context) {
     }
 }

@@ -257,15 +257,7 @@ import SwiftUI
         let tapGestureRec = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
         sceneView.addGestureRecognizer(tapGestureRec)
         if method == .touch {
-            let panGestureRec = UIPanGestureRecognizer(target: self, action: #selector(handlePan(panRec:)))
-            sceneView.addGestureRecognizer(panGestureRec)
-
-            let pinchRec = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(pinchRec:)))
-            sceneView.addGestureRecognizer(pinchRec)
-
-            if motionManager.isDeviceMotionActive {
-                motionManager.stopDeviceMotionUpdates()
-            }
+            // removed touch support to remove deprecated functions
         } else {
             guard motionManager.isDeviceMotionAvailable else {return}
             motionManager.deviceMotionUpdateInterval = 0.015
@@ -359,25 +351,6 @@ import SwiftUI
             reportMovement(CGFloat(-cameraNode.eulerAngles.y), xFov.toRadians())
         }
     }
-
-    @objc func handlePinch(pinchRec: UIPinchGestureRecognizer) {
-           if pinchRec.numberOfTouches != 2 {
-               return
-           }
-
-           let zoom = Double(pinchRec.scale)
-           switch pinchRec.state {
-           case .began:
-               startScale = cameraNode.camera!.yFov
-           case .changed:
-               let fov = startScale / zoom
-               if fov > 20 && fov < 80 {
-                   cameraNode.camera!.yFov = fov
-               }
-           default:
-               break
-           }
-       }
 
     public override func layoutSubviews() {
         super.layoutSubviews()

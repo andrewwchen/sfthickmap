@@ -74,12 +74,18 @@ class UpdatablePointAnnotation: MKPointAnnotation {
         super.init()
     }
      */
+    var id: Int?
     var desc: String?
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let annotation = view.annotation as? UpdatablePointAnnotation {
+            print(annotation.id!)
+        }
+    }
     func select() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.updateAnnotation(currentAnnotation: self)
     }
-    init (desc: String?=nil) {
+    init (id: Int?=nil, desc: String?=nil) {
         self.desc = desc
     }
 }
@@ -228,33 +234,53 @@ struct ContentView: View {
     @State var showWelcome = true
     @State var showPanoDetail = false
     @EnvironmentObject var selections: Selections
-    @EnvironmentObject var partialSheetManager: PartialSheetManager
+    @EnvironmentObject var partialSheet: PartialSheetManager
     var body: some View {
         ZStack(alignment: .leading) {
             //backgroundColor
             Color(white: 0.8, opacity: 1)
                 .edgesIgnoringSafeArea(.all)
                 .zIndex(0)
-            MapView().zIndex(1).edgesIgnoringSafeArea([.all])
-            
-            //PanoView().zIndex(1) //TEMP - MapView will go here
-            Button(action: {
-                self.partialSheetManager.showPartialSheet({
-                    print("Partial sheet dismissed")
-                }) {
-                     AnnotationDetailView()
+            TabView {
+                MapView()
+                    .edgesIgnoringSafeArea([.all])
+                    .tabItem {
+                        Image(systemName: "list.dash")
+                        Text("Map")
+                    }
+
+                PanoView()
+                    .edgesIgnoringSafeArea([.all])
+                    .tabItem {
+                        Image(systemName: "square.and.pencil")
+                        Text("Pano Test")
+                    }
+                
+                VStack(alignment: .center) {
+                    Spacer()
+                        Button(action: {
+                            self.partialSheet.showPartialSheet({
+                                print("dismissed")
+                            }) {
+                                AnnotationDetailView()
+                            }
+                        }, label: {
+                            Text("Show Partial Sheet")
+                        })
+                    Spacer()
                 }
-            }, label: {
-                Text("Show sheet")
-            }).zIndex(2)
-            .sheet(isPresented: $showWelcome) {
-                AnnotationDetailView()
-            }
-            /*
+                    .addPartialSheet()
+                    .tabItem {
+                        Image(systemName: "square.and.pencil")
+                        Text("Annotation Detail Test")
+                    }
+                
+            }.zIndex(1)
+            
             .sheet(isPresented: $showWelcome) {
                 WelcomeView(showWelcome: self.$showWelcome)
             }
-            */
+            
 
         }
     }

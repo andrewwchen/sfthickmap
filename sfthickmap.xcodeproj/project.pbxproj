@@ -17,6 +17,7 @@
 		49A628C12500C5EF009BCD30 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A628C02500C5EF009BCD30 /* WelcomeView.swift */; };
 		49AADA6025400FAA00B5F239 /* AnnotationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AADA5F25400FAA00B5F239 /* AnnotationDetailView.swift */; };
 		49AADA6C254080C400B5F239 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 49AADA6B254080C400B5F239 /* PartialSheet */; };
+		49AADA96254628C300B5F239 /* sfthickmap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49AADA94254628C300B5F239 /* sfthickmap.xcdatamodeld */; };
 		49EB001B24F62458002202FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB001A24F62458002202FA /* AppDelegate.swift */; };
 		49EB001D24F62458002202FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB001C24F62458002202FA /* SceneDelegate.swift */; };
 		49EB002224F62458002202FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB002124F62458002202FA /* ContentView.swift */; };
@@ -57,6 +58,7 @@
 		49A628BC2500B413009BCD30 /* CTPanoramaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTPanoramaView.swift; sourceTree = "<group>"; };
 		49A628C02500C5EF009BCD30 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		49AADA5F25400FAA00B5F239 /* AnnotationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDetailView.swift; sourceTree = "<group>"; };
+		49AADA95254628C300B5F239 /* sfthickmap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sfthickmap.xcdatamodel; sourceTree = "<group>"; };
 		49EB001724F62458002202FA /* sfthickmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sfthickmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EB001A24F62458002202FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49EB001C24F62458002202FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				49EB002B24F62459002202FA /* Info.plist */,
 				49EB002524F62459002202FA /* Preview Content */,
 				494F0EF92521346D00BF4441 /* Constants.swift */,
+				49AADA94254628C300B5F239 /* sfthickmap.xcdatamodeld */,
 			);
 			path = sfthickmap;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				49AADA6025400FAA00B5F239 /* AnnotationDetailView.swift in Sources */,
 				495009E52504ABE50054CB50 /* PanoView.swift in Sources */,
 				49EB001D24F62458002202FA /* SceneDelegate.swift in Sources */,
+				49AADA96254628C300B5F239 /* sfthickmap.xcdatamodeld in Sources */,
 				49A628BE2500B413009BCD30 /* CTPanoramaView.swift in Sources */,
 				49EB002224F62458002202FA /* ContentView.swift in Sources */,
 				493AE1F7250184B5004BCDC2 /* PanoImageView.swift in Sources */,
@@ -815,6 +819,19 @@
 			productName = PartialSheet;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		49AADA94254628C300B5F239 /* sfthickmap.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49AADA95254628C300B5F239 /* sfthickmap.xcdatamodel */,
+			);
+			currentVersion = 49AADA95254628C300B5F239 /* sfthickmap.xcdatamodel */;
+			path = sfthickmap.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 49EB000F24F62458002202FA /* Project object */;
 }
