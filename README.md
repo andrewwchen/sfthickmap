@@ -8,6 +8,8 @@ Includes:
 *  Camera view for recognizing visual triggers for landmark details
 *  360 degree image views of landmark details with embedded buttons for additional information
 
+> This project is still a work-in-progress. Here is a video of current progress on features: https://drive.google.com/file/d/1UoU750iFwqpvYcrVU1zAXfXqUu3goSHC/view?usp=sharing
+
 
 >A prototype for "Digital Pilgrims: Thick-Mapping the Smith Pond Shaker Forest"
 https://neukom.dartmouth.edu/research/compx-faculty-grant-program/2020-grant-recipients
