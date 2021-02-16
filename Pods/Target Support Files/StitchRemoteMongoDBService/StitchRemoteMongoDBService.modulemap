@@ -1,0 +1,6 @@
+framework module StitchRemoteMongoDBService {
+  umbrella header "StitchRemoteMongoDBService-umbrella.h"
+
+  export *
+  module * { export * }
+}

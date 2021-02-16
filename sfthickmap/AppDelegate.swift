@@ -9,13 +9,30 @@
 import UIKit
 import CoreData
 import SwiftUI
+import MapKit
+import ARKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var selections = Selections()
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        guard ARWorldTrackingConfiguration.isSupported else {
+            fatalError("""
+                ARKit is not available on this device. For apps that require ARKit
+                for core functionality, use the `arkit` key in the key in the
+                `UIRequiredDeviceCapabilities` section of the Info.plist to prevent
+                the app from installing. (If the app can't be installed, this error
+                can't be triggered in a production scenario.)
+                In apps where AR is an additive feature, use `isSupported` to
+                determine whether to show UI for launching AR experiences.
+            """) // For details, see https://developer.apple.com/documentation/arkit
+        }
+        
+        UIScrollView.appearance().bounces = false
         // Override point for customization after application launch.
         return true
     }
@@ -89,13 +106,20 @@ extension AppDelegate {
     func updateButton(currentButton: PanoButton?) {
         withAnimation {
             self.selections.currentButton = currentButton
+            if currentButton == nil {
+                self.selections.showButtonDetail = false
+            } else {
+                self.selections.showButtonDetail = true
+            }
         }
     }
-    func updateAnnotation(currentAnnotation: UpdatablePointAnnotation?) {
+    func updateAnnotation(currentAnnotation: SFAnnotation?) {
         withAnimation {
             self.selections.currentAnnotation = currentAnnotation
-            print(currentAnnotation!.title)
         }
+    }
+    func getAnnotation() -> SFAnnotation? {
+        return self.selections.currentAnnotation
     }
     func getLandmark() -> Landmark? {
         return self.selections.currentLandmark

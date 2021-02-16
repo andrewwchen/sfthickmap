@@ -1,3 +1,12 @@
 ${PODS_ROOT}/Target Support Files/Pods-sfthickmap/Pods-sfthickmap-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Realm/Realm.framework
-${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
+${BUILT_PRODUCTS_DIR}/MongoMobile/MongoMobile.framework
+${BUILT_PRODUCTS_DIR}/MongoSwift/MongoSwift.framework
+${BUILT_PRODUCTS_DIR}/StitchCore/StitchCore.framework
+${BUILT_PRODUCTS_DIR}/StitchCoreLocalMongoDBService/StitchCoreLocalMongoDBService.framework
+${BUILT_PRODUCTS_DIR}/StitchCoreRemoteMongoDBService/StitchCoreRemoteMongoDBService.framework
+${BUILT_PRODUCTS_DIR}/StitchCoreSDK/StitchCoreSDK.framework
+${BUILT_PRODUCTS_DIR}/StitchRemoteMongoDBService/StitchRemoteMongoDBService.framework
+${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/bson.framework
+${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/mongoc.framework
+${PODS_ROOT}/mongo_embedded/iPhoneOS/Frameworks/mongo_embedded.framework
+${PODS_ROOT}/mongoc_embedded/iPhoneOS/Frameworks/mongoc_embedded.framework

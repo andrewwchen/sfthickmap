@@ -7,81 +7,76 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23E2A3145AE8B84ADFCF491B /* Pods_sfthickmap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCD93C9A46493342CA83F73 /* Pods_sfthickmap.framework */; };
-		493AE1F7250184B5004BCDC2 /* PanoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AE1F6250184B5004BCDC2 /* PanoImageView.swift */; };
-		494F0EFA2521346D00BF4441 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494F0EF92521346D00BF4441 /* Constants.swift */; };
+		49002BFD258A926700109689 /* MongoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49002BFC258A926700109689 /* MongoDB.swift */; };
+		49002C02258AB31600109689 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49002C01258AB31600109689 /* Config.swift */; };
+		49002C0E258C107200109689 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49002C0D258C107200109689 /* Settings.swift */; };
+		49002C59258C513500109689 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49002C58258C513500109689 /* ViewModifiers.swift */; };
+		49233334256C83D70057ED12 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49233333256C83D70057ED12 /* Landmark.swift */; };
+		492E18E125CCA7380062FE12 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E18E025CCA7380062FE12 /* ARView.swift */; };
+		492E4E122555F2F000C1D955 /* SFAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E4E112555F2F000C1D955 /* SFAnnotation.swift */; };
+		492E4E1D2556014400C1D955 /* AnnoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E4E1C2556014400C1D955 /* AnnoDetailView.swift */; };
 		495009E32504AAAD0054CB50 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495009E22504AAAD0054CB50 /* MapView.swift */; };
 		495009E52504ABE50054CB50 /* PanoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495009E42504ABE50054CB50 /* PanoView.swift */; };
-		49A4B7702506E3FD00C9284B /* PanoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4B76F2506E3FD00C9284B /* PanoDetailView.swift */; };
+		496B9E7A2564D2E0000FA77E /* ButtonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9E792564D2E0000FA77E /* ButtonDetailView.swift */; };
+		496B9E7E2564D8CF000FA77E /* PanoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B9E7D2564D8CF000FA77E /* PanoButton.swift */; };
+		49A5CB2325C26293008BA67C /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5CB2225C26293008BA67C /* AudioPlayerView.swift */; };
+		49A5CB2F25C282D3008BA67C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A5CB2E25C282D3008BA67C /* AlertView.swift */; };
 		49A628BE2500B413009BCD30 /* CTPanoramaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A628BC2500B413009BCD30 /* CTPanoramaView.swift */; };
 		49A628C12500C5EF009BCD30 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A628C02500C5EF009BCD30 /* WelcomeView.swift */; };
-		49AADA6025400FAA00B5F239 /* AnnotationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AADA5F25400FAA00B5F239 /* AnnotationDetailView.swift */; };
 		49AADA6C254080C400B5F239 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 49AADA6B254080C400B5F239 /* PartialSheet */; };
-		49AADA96254628C300B5F239 /* sfthickmap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49AADA94254628C300B5F239 /* sfthickmap.xcdatamodeld */; };
+		49DB6EA92556196400E3F081 /* sfthickmap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49DB6EA72556196400E3F081 /* sfthickmap.xcdatamodeld */; };
 		49EB001B24F62458002202FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB001A24F62458002202FA /* AppDelegate.swift */; };
 		49EB001D24F62458002202FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB001C24F62458002202FA /* SceneDelegate.swift */; };
 		49EB002224F62458002202FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB002124F62458002202FA /* ContentView.swift */; };
 		49EB002424F62459002202FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EB002324F62459002202FA /* Assets.xcassets */; };
-		49EB002724F62459002202FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EB002624F62459002202FA /* Preview Assets.xcassets */; };
 		49EB002A24F62459002202FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EB002824F62459002202FA /* LaunchScreen.storyboard */; };
-		49EB003524F62459002202FA /* sfthickmapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB003424F62459002202FA /* sfthickmapTests.swift */; };
-		49EB004024F62459002202FA /* sfthickmapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EB003F24F62459002202FA /* sfthickmapUITests.swift */; };
 		49EB004E24F62529002202FA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49EB004D24F62529002202FA /* README.md */; };
-		6ED1C08599017BCCE71C707B /* Pods_sfthickmapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04E09FCF8187E35A769D092 /* Pods_sfthickmapTests.framework */; };
-		E43313D061A1DCB5A99187A3 /* Pods_sfthickmap_sfthickmapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42C772CB2AA0606F09A61EF /* Pods_sfthickmap_sfthickmapUITests.framework */; };
+		F2FBD78C032F1A3203060268 /* Pods_sfthickmap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264ADB3FDF09956509809707 /* Pods_sfthickmap.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		49EB003124F62459002202FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 49EB000F24F62458002202FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 49EB001624F62458002202FA;
-			remoteInfo = sfthickmap;
-		};
-		49EB003C24F62459002202FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 49EB000F24F62458002202FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 49EB001624F62458002202FA;
-			remoteInfo = sfthickmap;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		2EECF6146BAE54DC1B704B98 /* Pods-sfthickmapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmapTests.release.xcconfig"; path = "Target Support Files/Pods-sfthickmapTests/Pods-sfthickmapTests.release.xcconfig"; sourceTree = "<group>"; };
-		493AE1F6250184B5004BCDC2 /* PanoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoImageView.swift; sourceTree = "<group>"; };
-		494F0EF92521346D00BF4441 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0D3C3F943FBE8F484E789B37 /* Pods-sfthickmap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmap.release.xcconfig"; path = "Target Support Files/Pods-sfthickmap/Pods-sfthickmap.release.xcconfig"; sourceTree = "<group>"; };
+		264ADB3FDF09956509809707 /* Pods_sfthickmap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sfthickmap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49002BFC258A926700109689 /* MongoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDB.swift; sourceTree = "<group>"; };
+		49002C01258AB31600109689 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		49002C0D258C107200109689 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		49002C58258C513500109689 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		49233333256C83D70057ED12 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		492E18E025CCA7380062FE12 /* ARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
+		492E4E112555F2F000C1D955 /* SFAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFAnnotation.swift; sourceTree = "<group>"; };
+		492E4E1C2556014400C1D955 /* AnnoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnoDetailView.swift; sourceTree = "<group>"; };
 		495009E22504AAAD0054CB50 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		495009E42504ABE50054CB50 /* PanoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoView.swift; sourceTree = "<group>"; };
-		49A4B76F2506E3FD00C9284B /* PanoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoDetailView.swift; sourceTree = "<group>"; };
+		495E528E25D786B700ED6D4B /* MongoMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MongoMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E528F25D786B700ED6D4B /* MongoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MongoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E529025D786B700ED6D4B /* StitchCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E529125D786B700ED6D4B /* StitchCoreLocalMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCoreLocalMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E529225D786B700ED6D4B /* StitchCoreRemoteMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCoreRemoteMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E529325D786B700ED6D4B /* StitchCoreSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCoreSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E529425D786B700ED6D4B /* StitchRemoteMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchRemoteMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E52A725D791B600ED6D4B /* MongoMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MongoMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E52A825D791B600ED6D4B /* MongoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MongoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E52A925D791B600ED6D4B /* StitchCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E52AA25D791B600ED6D4B /* StitchCoreLocalMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCoreLocalMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E52AB25D791B600ED6D4B /* StitchCoreRemoteMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCoreRemoteMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E52AC25D791B600ED6D4B /* StitchCoreSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchCoreSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		495E52AD25D791B600ED6D4B /* StitchRemoteMongoDBService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = StitchRemoteMongoDBService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		496B9E792564D2E0000FA77E /* ButtonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDetailView.swift; sourceTree = "<group>"; };
+		496B9E7D2564D8CF000FA77E /* PanoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoButton.swift; sourceTree = "<group>"; };
+		49A5CB2225C26293008BA67C /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		49A5CB2E25C282D3008BA67C /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		49A628BC2500B413009BCD30 /* CTPanoramaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTPanoramaView.swift; sourceTree = "<group>"; };
 		49A628C02500C5EF009BCD30 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		49AADA5F25400FAA00B5F239 /* AnnotationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDetailView.swift; sourceTree = "<group>"; };
-		49AADA95254628C300B5F239 /* sfthickmap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sfthickmap.xcdatamodel; sourceTree = "<group>"; };
-		49EB001724F62458002202FA /* sfthickmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sfthickmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DB6E9E2556191C00E3F081 /* sfthickmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sfthickmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DB6EA82556196400E3F081 /* sfthickmap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sfthickmap.xcdatamodel; sourceTree = "<group>"; };
 		49EB001A24F62458002202FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49EB001C24F62458002202FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49EB002124F62458002202FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		49EB002324F62459002202FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		49EB002624F62459002202FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49EB002924F62459002202FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49EB002B24F62459002202FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49EB003024F62459002202FA /* sfthickmapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sfthickmapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49EB003424F62459002202FA /* sfthickmapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sfthickmapTests.swift; sourceTree = "<group>"; };
-		49EB003624F62459002202FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49EB003B24F62459002202FA /* sfthickmapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sfthickmapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49EB003F24F62459002202FA /* sfthickmapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sfthickmapUITests.swift; sourceTree = "<group>"; };
-		49EB004124F62459002202FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49EB004D24F62529002202FA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4CD3B96B8B5679BD76067356 /* Pods-sfthickmap-sfthickmapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmap-sfthickmapUITests.release.xcconfig"; path = "Target Support Files/Pods-sfthickmap-sfthickmapUITests/Pods-sfthickmap-sfthickmapUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7E8AF046964DFD34687FAEEA /* Pods-sfthickmap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmap.debug.xcconfig"; path = "Target Support Files/Pods-sfthickmap/Pods-sfthickmap.debug.xcconfig"; sourceTree = "<group>"; };
-		CDE376AB89E9D316DA41F910 /* Pods-sfthickmap-sfthickmapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmap-sfthickmapUITests.debug.xcconfig"; path = "Target Support Files/Pods-sfthickmap-sfthickmapUITests/Pods-sfthickmap-sfthickmapUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D04E09FCF8187E35A769D092 /* Pods_sfthickmapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sfthickmapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED905F3663B5DC1AAC99EB42 /* Pods-sfthickmapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmapTests.debug.xcconfig"; path = "Target Support Files/Pods-sfthickmapTests/Pods-sfthickmapTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EFCD93C9A46493342CA83F73 /* Pods_sfthickmap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sfthickmap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F42C772CB2AA0606F09A61EF /* Pods_sfthickmap_sfthickmapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sfthickmap_sfthickmapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5A8AC5EA2D3491765DE0B3B /* Pods-sfthickmap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmap.release.xcconfig"; path = "Target Support Files/Pods-sfthickmap/Pods-sfthickmap.release.xcconfig"; sourceTree = "<group>"; };
+		92D8420EB1A1D7542F33478E /* Pods-sfthickmap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sfthickmap.debug.xcconfig"; path = "Target Support Files/Pods-sfthickmap/Pods-sfthickmap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,37 +85,66 @@
 			buildActionMask = 2147483647;
 			files = (
 				49AADA6C254080C400B5F239 /* PartialSheet in Frameworks */,
-				23E2A3145AE8B84ADFCF491B /* Pods_sfthickmap.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49EB002D24F62459002202FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6ED1C08599017BCCE71C707B /* Pods_sfthickmapTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49EB003824F62459002202FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E43313D061A1DCB5A99187A3 /* Pods_sfthickmap_sfthickmapUITests.framework in Frameworks */,
+				F2FBD78C032F1A3203060268 /* Pods_sfthickmap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		46494BDA11D972B6E8120BD9 /* Frameworks */ = {
+		49002C07258AB4A700109689 /* Datatypes */ = {
 			isa = PBXGroup;
 			children = (
-				EFCD93C9A46493342CA83F73 /* Pods_sfthickmap.framework */,
-				F42C772CB2AA0606F09A61EF /* Pods_sfthickmap_sfthickmapUITests.framework */,
-				D04E09FCF8187E35A769D092 /* Pods_sfthickmapTests.framework */,
+				492E4E112555F2F000C1D955 /* SFAnnotation.swift */,
+				496B9E7D2564D8CF000FA77E /* PanoButton.swift */,
+				49233333256C83D70057ED12 /* Landmark.swift */,
 			);
-			name = Frameworks;
+			name = Datatypes;
+			sourceTree = "<group>";
+		};
+		49002C09258AB50200109689 /* DetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				49A5CB2225C26293008BA67C /* AudioPlayerView.swift */,
+				49A5CB2E25C282D3008BA67C /* AlertView.swift */,
+				492E4E1C2556014400C1D955 /* AnnoDetailView.swift */,
+				496B9E792564D2E0000FA77E /* ButtonDetailView.swift */,
+			);
+			name = DetailViews;
+			sourceTree = "<group>";
+		};
+		49002C0A258AB5B000109689 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				49A628BC2500B413009BCD30 /* CTPanoramaView.swift */,
+			);
+			name = UIViews;
+			sourceTree = "<group>";
+		};
+		49002C0B258AB60100109689 /* UIViewsRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				495009E42504ABE50054CB50 /* PanoView.swift */,
+				495009E22504AAAD0054CB50 /* MapView.swift */,
+			);
+			name = UIViewsRepresentable;
+			sourceTree = "<group>";
+		};
+		49002C0C258AB66100109689 /* CoreViews */ = {
+			isa = PBXGroup;
+			children = (
+				49A628C02500C5EF009BCD30 /* WelcomeView.swift */,
+				49EB002124F62458002202FA /* ContentView.swift */,
+			);
+			name = CoreViews;
+			sourceTree = "<group>";
+		};
+		492E18D925CCA5AD0062FE12 /* ImageRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				492E18E025CCA7380062FE12 /* ARView.swift */,
+			);
+			name = ImageRecognition;
 			sourceTree = "<group>";
 		};
 		49EB000E24F62458002202FA = {
@@ -128,82 +152,62 @@
 			children = (
 				49EB004D24F62529002202FA /* README.md */,
 				49EB001924F62458002202FA /* sfthickmap */,
-				49EB003324F62459002202FA /* sfthickmapTests */,
-				49EB003E24F62459002202FA /* sfthickmapUITests */,
-				49EB001824F62458002202FA /* Products */,
-				F2907246C1F7B9C6416279AA /* Pods */,
-				46494BDA11D972B6E8120BD9 /* Frameworks */,
+				49DB6E9E2556191C00E3F081 /* sfthickmap.app */,
+				DCD7FC5D6D3B05C0D926D095 /* Pods */,
+				D5A872221CAAA838F914F66C /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		49EB001824F62458002202FA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				49EB001724F62458002202FA /* sfthickmap.app */,
-				49EB003024F62459002202FA /* sfthickmapTests.xctest */,
-				49EB003B24F62459002202FA /* sfthickmapUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		49EB001924F62458002202FA /* sfthickmap */ = {
 			isa = PBXGroup;
 			children = (
-				49A628BC2500B413009BCD30 /* CTPanoramaView.swift */,
-				493AE1F6250184B5004BCDC2 /* PanoImageView.swift */,
-				49A4B76F2506E3FD00C9284B /* PanoDetailView.swift */,
-				495009E42504ABE50054CB50 /* PanoView.swift */,
-				49A628C02500C5EF009BCD30 /* WelcomeView.swift */,
-				495009E22504AAAD0054CB50 /* MapView.swift */,
-				49AADA5F25400FAA00B5F239 /* AnnotationDetailView.swift */,
-				49EB002124F62458002202FA /* ContentView.swift */,
+				492E18D925CCA5AD0062FE12 /* ImageRecognition */,
+				49002C01258AB31600109689 /* Config.swift */,
+				49002C0D258C107200109689 /* Settings.swift */,
+				49002BFC258A926700109689 /* MongoDB.swift */,
+				49002C58258C513500109689 /* ViewModifiers.swift */,
+				49002C0A258AB5B000109689 /* UIViews */,
+				49002C0B258AB60100109689 /* UIViewsRepresentable */,
+				49002C0C258AB66100109689 /* CoreViews */,
+				49002C09258AB50200109689 /* DetailViews */,
+				49002C07258AB4A700109689 /* Datatypes */,
+				49EB002324F62459002202FA /* Assets.xcassets */,
 				49EB001A24F62458002202FA /* AppDelegate.swift */,
 				49EB001C24F62458002202FA /* SceneDelegate.swift */,
-				49EB002324F62459002202FA /* Assets.xcassets */,
-				49EB002824F62459002202FA /* LaunchScreen.storyboard */,
 				49EB002B24F62459002202FA /* Info.plist */,
-				49EB002524F62459002202FA /* Preview Content */,
-				494F0EF92521346D00BF4441 /* Constants.swift */,
-				49AADA94254628C300B5F239 /* sfthickmap.xcdatamodeld */,
+				49EB002824F62459002202FA /* LaunchScreen.storyboard */,
+				49DB6EA72556196400E3F081 /* sfthickmap.xcdatamodeld */,
 			);
 			path = sfthickmap;
 			sourceTree = "<group>";
 		};
-		49EB002524F62459002202FA /* Preview Content */ = {
+		D5A872221CAAA838F914F66C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				49EB002624F62459002202FA /* Preview Assets.xcassets */,
+				495E52A725D791B600ED6D4B /* MongoMobile.framework */,
+				495E52A825D791B600ED6D4B /* MongoSwift.framework */,
+				495E52A925D791B600ED6D4B /* StitchCore.framework */,
+				495E52AA25D791B600ED6D4B /* StitchCoreLocalMongoDBService.framework */,
+				495E52AB25D791B600ED6D4B /* StitchCoreRemoteMongoDBService.framework */,
+				495E52AC25D791B600ED6D4B /* StitchCoreSDK.framework */,
+				495E52AD25D791B600ED6D4B /* StitchRemoteMongoDBService.framework */,
+				495E528E25D786B700ED6D4B /* MongoMobile.framework */,
+				495E528F25D786B700ED6D4B /* MongoSwift.framework */,
+				495E529025D786B700ED6D4B /* StitchCore.framework */,
+				495E529125D786B700ED6D4B /* StitchCoreLocalMongoDBService.framework */,
+				495E529225D786B700ED6D4B /* StitchCoreRemoteMongoDBService.framework */,
+				495E529325D786B700ED6D4B /* StitchCoreSDK.framework */,
+				495E529425D786B700ED6D4B /* StitchRemoteMongoDBService.framework */,
+				264ADB3FDF09956509809707 /* Pods_sfthickmap.framework */,
 			);
-			path = "Preview Content";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		49EB003324F62459002202FA /* sfthickmapTests */ = {
+		DCD7FC5D6D3B05C0D926D095 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				49EB003424F62459002202FA /* sfthickmapTests.swift */,
-				49EB003624F62459002202FA /* Info.plist */,
-			);
-			path = sfthickmapTests;
-			sourceTree = "<group>";
-		};
-		49EB003E24F62459002202FA /* sfthickmapUITests */ = {
-			isa = PBXGroup;
-			children = (
-				49EB003F24F62459002202FA /* sfthickmapUITests.swift */,
-				49EB004124F62459002202FA /* Info.plist */,
-			);
-			path = sfthickmapUITests;
-			sourceTree = "<group>";
-		};
-		F2907246C1F7B9C6416279AA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7E8AF046964DFD34687FAEEA /* Pods-sfthickmap.debug.xcconfig */,
-				F5A8AC5EA2D3491765DE0B3B /* Pods-sfthickmap.release.xcconfig */,
-				CDE376AB89E9D316DA41F910 /* Pods-sfthickmap-sfthickmapUITests.debug.xcconfig */,
-				4CD3B96B8B5679BD76067356 /* Pods-sfthickmap-sfthickmapUITests.release.xcconfig */,
-				ED905F3663B5DC1AAC99EB42 /* Pods-sfthickmapTests.debug.xcconfig */,
-				2EECF6146BAE54DC1B704B98 /* Pods-sfthickmapTests.release.xcconfig */,
+				92D8420EB1A1D7542F33478E /* Pods-sfthickmap.debug.xcconfig */,
+				0D3C3F943FBE8F484E789B37 /* Pods-sfthickmap.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -215,11 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49EB004424F62459002202FA /* Build configuration list for PBXNativeTarget "sfthickmap" */;
 			buildPhases = (
-				32E205E9322B98DAD9360953 /* [CP] Check Pods Manifest.lock */,
+				0BAA80DD537479A57B8186D3 /* [CP] Check Pods Manifest.lock */,
 				49EB001324F62458002202FA /* Sources */,
 				49EB001424F62458002202FA /* Frameworks */,
 				49EB001524F62458002202FA /* Resources */,
-				EE83BCDC91552042D5EF768A /* [CP] Embed Pods Frameworks */,
+				6A6119EB9EBC3881006AF06D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,47 +234,8 @@
 				49AADA6B254080C400B5F239 /* PartialSheet */,
 			);
 			productName = sfthickmap;
-			productReference = 49EB001724F62458002202FA /* sfthickmap.app */;
+			productReference = 49DB6E9E2556191C00E3F081 /* sfthickmap.app */;
 			productType = "com.apple.product-type.application";
-		};
-		49EB002F24F62459002202FA /* sfthickmapTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 49EB004724F62459002202FA /* Build configuration list for PBXNativeTarget "sfthickmapTests" */;
-			buildPhases = (
-				14D9D4DF5497E7E22B9F306E /* [CP] Check Pods Manifest.lock */,
-				49EB002C24F62459002202FA /* Sources */,
-				49EB002D24F62459002202FA /* Frameworks */,
-				49EB002E24F62459002202FA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				49EB003224F62459002202FA /* PBXTargetDependency */,
-			);
-			name = sfthickmapTests;
-			productName = sfthickmapTests;
-			productReference = 49EB003024F62459002202FA /* sfthickmapTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		49EB003A24F62459002202FA /* sfthickmapUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 49EB004A24F62459002202FA /* Build configuration list for PBXNativeTarget "sfthickmapUITests" */;
-			buildPhases = (
-				9C288E3A7C2761F87DC2ED25 /* [CP] Check Pods Manifest.lock */,
-				49EB003724F62459002202FA /* Sources */,
-				49EB003824F62459002202FA /* Frameworks */,
-				49EB003924F62459002202FA /* Resources */,
-				2EFDD4EB2ECC9E86E1BF4205 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				49EB003D24F62459002202FA /* PBXTargetDependency */,
-			);
-			name = sfthickmapUITests;
-			productName = sfthickmapUITests;
-			productReference = 49EB003B24F62459002202FA /* sfthickmapUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -284,14 +249,6 @@
 				TargetAttributes = {
 					49EB001624F62458002202FA = {
 						CreatedOnToolsVersion = 11.6;
-					};
-					49EB002F24F62459002202FA = {
-						CreatedOnToolsVersion = 11.6;
-						TestTargetID = 49EB001624F62458002202FA;
-					};
-					49EB003A24F62459002202FA = {
-						CreatedOnToolsVersion = 11.6;
-						TestTargetID = 49EB001624F62458002202FA;
 					};
 				};
 			};
@@ -307,13 +264,11 @@
 			packageReferences = (
 				49AADA6A254080C400B5F239 /* XCRemoteSwiftPackageReference "PartialSheet" */,
 			);
-			productRefGroup = 49EB001824F62458002202FA /* Products */;
+			productRefGroup = 49EB000E24F62458002202FA;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				49EB001624F62458002202FA /* sfthickmap */,
-				49EB002F24F62459002202FA /* sfthickmapTests */,
-				49EB003A24F62459002202FA /* sfthickmapUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,69 +279,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EB002A24F62459002202FA /* LaunchScreen.storyboard in Resources */,
-				49EB002724F62459002202FA /* Preview Assets.xcassets in Resources */,
 				49EB004E24F62529002202FA /* README.md in Resources */,
 				49EB002424F62459002202FA /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49EB002E24F62459002202FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49EB003924F62459002202FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		14D9D4DF5497E7E22B9F306E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-sfthickmapTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2EFDD4EB2ECC9E86E1BF4205 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sfthickmap-sfthickmapUITests/Pods-sfthickmap-sfthickmapUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sfthickmap-sfthickmapUITests/Pods-sfthickmap-sfthickmapUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sfthickmap-sfthickmapUITests/Pods-sfthickmap-sfthickmapUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		32E205E9322B98DAD9360953 /* [CP] Check Pods Manifest.lock */ = {
+		0BAA80DD537479A57B8186D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -408,29 +309,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9C288E3A7C2761F87DC2ED25 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-sfthickmap-sfthickmapUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE83BCDC91552042D5EF768A /* [CP] Embed Pods Frameworks */ = {
+		6A6119EB9EBC3881006AF06D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -454,51 +333,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496B9E7A2564D2E0000FA77E /* ButtonDetailView.swift in Sources */,
+				49A5CB2F25C282D3008BA67C /* AlertView.swift in Sources */,
+				492E18E125CCA7380062FE12 /* ARView.swift in Sources */,
 				49EB001B24F62458002202FA /* AppDelegate.swift in Sources */,
-				494F0EFA2521346D00BF4441 /* Constants.swift in Sources */,
-				49AADA6025400FAA00B5F239 /* AnnotationDetailView.swift in Sources */,
+				49002C02258AB31600109689 /* Config.swift in Sources */,
 				495009E52504ABE50054CB50 /* PanoView.swift in Sources */,
 				49EB001D24F62458002202FA /* SceneDelegate.swift in Sources */,
-				49AADA96254628C300B5F239 /* sfthickmap.xcdatamodeld in Sources */,
+				49002C59258C513500109689 /* ViewModifiers.swift in Sources */,
+				496B9E7E2564D8CF000FA77E /* PanoButton.swift in Sources */,
 				49A628BE2500B413009BCD30 /* CTPanoramaView.swift in Sources */,
 				49EB002224F62458002202FA /* ContentView.swift in Sources */,
-				493AE1F7250184B5004BCDC2 /* PanoImageView.swift in Sources */,
-				49A4B7702506E3FD00C9284B /* PanoDetailView.swift in Sources */,
+				492E4E1D2556014400C1D955 /* AnnoDetailView.swift in Sources */,
 				495009E32504AAAD0054CB50 /* MapView.swift in Sources */,
+				49002C0E258C107200109689 /* Settings.swift in Sources */,
+				492E4E122555F2F000C1D955 /* SFAnnotation.swift in Sources */,
 				49A628C12500C5EF009BCD30 /* WelcomeView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49EB002C24F62459002202FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				49EB003524F62459002202FA /* sfthickmapTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		49EB003724F62459002202FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				49EB004024F62459002202FA /* sfthickmapUITests.swift in Sources */,
+				49A5CB2325C26293008BA67C /* AudioPlayerView.swift in Sources */,
+				49DB6EA92556196400E3F081 /* sfthickmap.xcdatamodeld in Sources */,
+				49002BFD258A926700109689 /* MongoDB.swift in Sources */,
+				49233334256C83D70057ED12 /* Landmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		49EB003224F62459002202FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 49EB001624F62458002202FA /* sfthickmap */;
-			targetProxy = 49EB003124F62459002202FA /* PBXContainerItemProxy */;
-		};
-		49EB003D24F62459002202FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 49EB001624F62458002202FA /* sfthickmap */;
-			targetProxy = 49EB003C24F62459002202FA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		49EB002824F62459002202FA /* LaunchScreen.storyboard */ = {
@@ -569,7 +427,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Debug;
 		};
@@ -612,6 +470,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -630,21 +489,23 @@
 		};
 		49EB004524F62459002202FA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E8AF046964DFD34687FAEEA /* Pods-sfthickmap.debug.xcconfig */;
+			baseConfigurationReference = 92D8420EB1A1D7542F33478E /* Pods-sfthickmap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"sfthickmap/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = CD9ELK9GYZ;
 				ENABLE_PREVIEWS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = sfthickmap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.dartmouth.devstudio.sfthickmap;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.dartmouth.devstudio.shakerforesthickmap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -652,111 +513,25 @@
 		};
 		49EB004624F62459002202FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5A8AC5EA2D3491765DE0B3B /* Pods-sfthickmap.release.xcconfig */;
+			baseConfigurationReference = 0D3C3F943FBE8F484E789B37 /* Pods-sfthickmap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"sfthickmap/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = CD9ELK9GYZ;
 				ENABLE_PREVIEWS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = sfthickmap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.dartmouth.devstudio.sfthickmap;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.dartmouth.devstudio.shakerforesthickmap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		49EB004824F62459002202FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED905F3663B5DC1AAC99EB42 /* Pods-sfthickmapTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CD9ELK9GYZ;
-				INFOPLIST_FILE = sfthickmapTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.dartmouth.devstudio.sfthickmapTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sfthickmap.app/sfthickmap";
-			};
-			name = Debug;
-		};
-		49EB004924F62459002202FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EECF6146BAE54DC1B704B98 /* Pods-sfthickmapTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CD9ELK9GYZ;
-				INFOPLIST_FILE = sfthickmapTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.dartmouth.devstudio.sfthickmapTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sfthickmap.app/sfthickmap";
-			};
-			name = Release;
-		};
-		49EB004B24F62459002202FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDE376AB89E9D316DA41F910 /* Pods-sfthickmap-sfthickmapUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CD9ELK9GYZ;
-				INFOPLIST_FILE = sfthickmapUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.dartmouth.devstudio.sfthickmapUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = sfthickmap;
-			};
-			name = Debug;
-		};
-		49EB004C24F62459002202FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CD3B96B8B5679BD76067356 /* Pods-sfthickmap-sfthickmapUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CD9ELK9GYZ;
-				INFOPLIST_FILE = sfthickmapUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.dartmouth.devstudio.sfthickmapUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = sfthickmap;
 			};
 			name = Release;
 		};
@@ -777,24 +552,6 @@
 			buildConfigurations = (
 				49EB004524F62459002202FA /* Debug */,
 				49EB004624F62459002202FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		49EB004724F62459002202FA /* Build configuration list for PBXNativeTarget "sfthickmapTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				49EB004824F62459002202FA /* Debug */,
-				49EB004924F62459002202FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		49EB004A24F62459002202FA /* Build configuration list for PBXNativeTarget "sfthickmapUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				49EB004B24F62459002202FA /* Debug */,
-				49EB004C24F62459002202FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -821,12 +578,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		49AADA94254628C300B5F239 /* sfthickmap.xcdatamodeld */ = {
+		49DB6EA72556196400E3F081 /* sfthickmap.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				49AADA95254628C300B5F239 /* sfthickmap.xcdatamodel */,
+				49DB6EA82556196400E3F081 /* sfthickmap.xcdatamodel */,
 			);
-			currentVersion = 49AADA95254628C300B5F239 /* sfthickmap.xcdatamodel */;
+			currentVersion = 49DB6EA82556196400E3F081 /* sfthickmap.xcdatamodel */;
 			path = sfthickmap.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

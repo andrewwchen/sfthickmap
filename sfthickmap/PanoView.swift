@@ -2,55 +2,38 @@
 //  PanoView.swift
 //  sfthickmap
 //
-//  Created by Andrew Chen on 9/6/20.
+//  Created by Andrew Chen on 9/3/20.
 //  Copyright © 2020 Dartmouth DEV Studio. All rights reserved.
 //
 
 import SwiftUI
-import SceneKit
 
-struct PanoView: View {
-    @EnvironmentObject var selections: Selections
-    var body: some View {
-        ZStack() {
-            if self.selections.currentLandmark != nil {
-                PanoImageView()
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                    .edgesIgnoringSafeArea(.all)
-                    .zIndex(0)
-                VStack() {
-                    if self.selections.currentLandmark!.title != nil {
-                        Text(self.selections.currentLandmark!.title!)
-                            .headline()
-                            .padding()
-                    }
 
-                    Spacer()
-                    Button(action: {
-                        self.selections.toggleLandmark()
-                        }) {
-                            Text("Toggle Landmark")
-                                .title()
-                                .padding([.top, .bottom], 10.0)
-                                .padding([.leading, .trailing], 50.0)
-                                .background(Color.blue
-                                .cornerRadius(25))
-                    }
-                }.zIndex(1)
-                
+struct PanoView: UIViewRepresentable {
+    @Binding var landmark: Landmark?
+    @Binding var showButtonDetail: Bool
+    func makeUIView(context: Context) -> CTPanoramaView {
+        let panoUIView: CTPanoramaView
+        if self.landmark != nil {
+            panoUIView = CTPanoramaView(frame: UIScreen.main.bounds, image: self.landmark!.img, buttons: self.landmark!.panoButtons, showButtonDetail: self.showButtonDetail)
+        } else {
+            panoUIView = CTPanoramaView(frame: UIScreen.main.bounds, image: nil, buttons: [], showButtonDetail: self.showButtonDetail)
+        }
+        panoUIView.panoramaType = .spherical
+        panoUIView.controlMethod = .motion
+        
+        return panoUIView
+    }
+
+    func updateUIView(_ uiView: CTPanoramaView, context: Context) {
+        if self.landmark != nil {
+            if uiView.image != self.landmark!.img {
+                uiView.image = self.landmark!.img
             }
-            if selections.currentButton != nil {
-                PanoDetailView()
-                    .transition(.move(edge: .bottom))
-                    .zIndex(2)
-            }
+            uiView.buttons = self.landmark!.panoButtons
+            //uiView.showButtonDetail = self.showButtonDetail
+        } else {
         }
     }
-    
-}
 
-struct PanoView_Previews: PreviewProvider {
-    static var previews: some View {
-        PanoView()
-    }
 }

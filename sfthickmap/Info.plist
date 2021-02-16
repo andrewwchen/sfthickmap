@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>to locate you on the map</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>to locate you on the map</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>to locate you on the map</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -23,9 +17,23 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.education</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>to scan for landmark triggers</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>to locate you on the map</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>to locate you on the map</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>to locate you on the map</string>
+	<key>NSPersistentStoreTypeKey</key>
+	<string>SQLite</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

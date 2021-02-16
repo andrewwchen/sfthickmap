@@ -7,14 +7,11 @@
 //
 //  Modified by Andrew Chen on 9/6/20.
 //  Copyright © 2020 Dartmouth DEV Studio. All rights reserved.
-/*
- 
- */
+
 import UIKit
 import SceneKit
 import CoreMotion
 import ImageIO
-
 import SwiftUI
 
 @objc public protocol CTPanoramaCompass {
@@ -41,7 +38,7 @@ import SwiftUI
     @objc public var compass: CTPanoramaCompass?
     @objc public var movementHandler: ((_ rotationAngle: CGFloat, _ fieldOfViewAngle: CGFloat) -> Void)?
     @objc public var panSpeed = CGPoint(x: 0.005, y: 0.005)
-    @objc public var startAngle: Float = 0
+    @objc public var startAngle: Float = 3.14
     
     @objc public var buttons: [PanoButton]? {
         didSet {
@@ -54,6 +51,8 @@ import SwiftUI
             panoramaType = panoramaTypeForCurrentImage
         }
     }
+    
+    public var showButtonDetail: Bool?
 
     @objc public var overlayView: UIView? {
         didSet {
@@ -153,11 +152,13 @@ import SwiftUI
     
     
 
-    public convenience init(frame: CGRect, image: UIImage, buttons: [PanoButton]) {
+    public convenience init(frame: CGRect, image: UIImage?, buttons: [PanoButton], showButtonDetail: Bool) {
         self.init(frame: frame)
         // Force Swift to call the property observer by calling the setter from a non-init context
         ({ self.image = image })()
         ({ self.buttons = buttons })()
+        //({ self.theta = theta })()
+        ({ self.showButtonDetail = showButtonDetail })()
     }
 
     deinit {
@@ -182,7 +183,6 @@ import SwiftUI
     
     private func createButtonsNodes() {
         let gottenButton = appDelegate.getButton()
-
         if oldButtons != nil {
             for b in oldButtons! {
                 b.node.removeFromParentNode()
@@ -190,13 +190,8 @@ import SwiftUI
             }
         }
         if buttons != nil {
-            if gottenButton != nil {
-                if !buttons!.contains(gottenButton!) {
-                    appDelegate.updateButton(currentButton: nil)
-                }
-            }
             for b in buttons! {
-                if b == gottenButton {
+                if self.showButtonDetail == true && b == gottenButton {
                     b.highlight()
                 } else {
                     b.unhighlight()
@@ -230,9 +225,6 @@ import SwiftUI
             sphereNode.geometry = sphere
             geometryNode = sphereNode
             
-
-
-
         } else {
             let tube = SCNTube(innerRadius: radius, outerRadius: radius, height: fovHeight)
             tube.heightSegmentCount = 50
@@ -305,22 +297,23 @@ import SwiftUI
     // MARK: Gesture handling
     
     @objc private func handleTap(sender: UITapGestureRecognizer) {
-        //if sender.state == .ended {
         if true {
             let point = sender.location(in: self)
             let hits = self.sceneView.hitTest(point, options: nil)
             if let tappedNode = hits.first?.node {
-                //print(tappedNode)
-                if tappedNode.name != nil && tappedNode != appDelegate.getButton()?.node{
+                if tappedNode.name != nil {
                     for b in buttons! {
                         b.unhighlight()
                         if b.node == tappedNode {
                             b.highlight()
-                            b.select()
+                            appDelegate.updateButton(currentButton: b)
                         }
                     }
+                } else {
+                    appDelegate.updateButton(currentButton: nil)
                 }
-                
+            } else {
+                appDelegate.updateButton(currentButton: nil)
             }
         }
     }
@@ -364,7 +357,7 @@ import SwiftUI
 private extension CMDeviceMotion {
 
     func orientation() -> SCNVector4 {
-
+        
         let attitude = self.attitude.quaternion
         let attitudeQuanternion = GLKQuaternion(quanternion: attitude)
 

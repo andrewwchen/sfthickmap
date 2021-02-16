@@ -1,22 +1,65 @@
 PODS:
-  - Realm (5.4.4):
-    - Realm/Headers (= 5.4.4)
-  - Realm/Headers (5.4.4)
-  - RealmSwift (5.4.4):
-    - Realm (= 5.4.4)
+  - mongo-embedded-c-driver (1.13.0-4.0.4)
+  - mongo_embedded (4.0.4)
+  - mongoc_embedded (4.0.4):
+    - mongo-embedded-c-driver (~> 1.13.0-4.0.4)
+    - mongo_embedded (~> 4.0.4)
+  - MongoMobile (0.1.0):
+    - mongo_embedded (~> 4.0.4)
+    - mongoc_embedded (~> 4.0.4)
+    - MongoSwift (~> 0.1.0)
+  - MongoSwift (0.1.0):
+    - mongo-embedded-c-driver (~> 1.13.0-4.0.0)
+  - StitchCore (6.4.0):
+    - StitchCoreSDK (= 6.4.0)
+  - StitchCoreLocalMongoDBService (6.4.0):
+    - MongoMobile (= 0.1.0)
+    - StitchCoreSDK (= 6.4.0)
+  - StitchCoreRemoteMongoDBService (6.4.0):
+    - StitchCoreLocalMongoDBService (= 6.4.0)
+    - StitchCoreSDK (= 6.4.0)
+  - StitchCoreSDK (6.4.0):
+    - MongoSwift (= 0.1.0)
+  - StitchRemoteMongoDBService (6.4.0):
+    - StitchCore (= 6.4.0)
+    - StitchCoreRemoteMongoDBService (= 6.4.0)
+  - StitchSDK (6.4.0):
+    - StitchSDK/StitchSDK (= 6.4.0)
+  - StitchSDK/StitchRemoteMongoDBService (6.4.0):
+    - StitchRemoteMongoDBService (= 6.4.0)
+  - StitchSDK/StitchSDK (6.4.0):
+    - StitchSDK/StitchRemoteMongoDBService
 
 DEPENDENCIES:
-  - RealmSwift
+  - StitchSDK (= 6.4.0)
 
 SPEC REPOS:
   trunk:
-    - Realm
-    - RealmSwift
+    - mongo-embedded-c-driver
+    - mongo_embedded
+    - mongoc_embedded
+    - MongoMobile
+    - MongoSwift
+    - StitchCore
+    - StitchCoreLocalMongoDBService
+    - StitchCoreRemoteMongoDBService
+    - StitchCoreSDK
+    - StitchRemoteMongoDBService
+    - StitchSDK
 
 SPEC CHECKSUMS:
-  Realm: b845bf406e03b9c52a53e0de2394480288aa532a
-  RealmSwift: b524ff07e4e92a34f4aecbe6ed1a613979a08bb9
+  mongo-embedded-c-driver: b46360baa15fc142baae80628822f26663220bde
+  mongo_embedded: e413134eb6b60544e7278add03007f8fe384a00c
+  mongoc_embedded: 41aadbb756b07070d6f0471192a84750cb42c580
+  MongoMobile: 988e8d2fd322761d6358570dde8a2b3d44801823
+  MongoSwift: e20f86eae1beb06bbba49c2d73bb570961cc4c85
+  StitchCore: 344f59b617dd5be8c32f0a2fdef39fb96591fc33
+  StitchCoreLocalMongoDBService: 26c339ea689d9633b33e266274406e7b4c3f2786
+  StitchCoreRemoteMongoDBService: e328908dde887cb3a9e3465793b37b69cb19c0e7
+  StitchCoreSDK: 4c4b847470229535a66f8ba6b2911c2eafc0d866
+  StitchRemoteMongoDBService: f5befbafb01720c4d7193e054907fa0ebff569f0
+  StitchSDK: 198397b6400c1fdd58e3e78300fe60374c700fe9
 
-PODFILE CHECKSUM: cc4a455d1b19bdb67deb192bf1eb034d4a53e462
+PODFILE CHECKSUM: 300135f8827bc007c037159604e2527ebfda5136
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

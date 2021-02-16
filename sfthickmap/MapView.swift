@@ -8,47 +8,84 @@
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
+var deselect = false
 
 struct MapView: UIViewRepresentable {
-    @EnvironmentObject var selections: Selections
+    @Binding var centerCoordinate: CLLocationCoordinate2D
+    @Binding var showAnnoDetail: Bool
+    @Binding var resetAnnotations: Bool
+    @Binding var resetRegion: Bool
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var annotations: [SFAnnotation]
     var locationManager = CLLocationManager()
+    
     func setupManager() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestAlwaysAuthorization()
-        
     }
+    
     func makeUIView(context: Context) -> MKMapView {
         setupManager()
         let mapView = MKMapView(frame: UIScreen.main.bounds)
+        mapView.delegate = context.coordinator
+        // MAP CONFIG
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .follow
         mapView.mapType = .satelliteFlyover
-    
-        // SAMPLE REGION
-        let mapCenter = CLLocationCoordinate2DMake(43.702634, -72.286260)
-        let mapRegion = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 1000, longitudinalMeters: 1000)
-        mapView.setRegion(mapRegion, animated: true)
         mapView.showsCompass = true
         mapView.showsScale = true
+    
+        // DEFAULT REGION
+        let mapRegion = MKCoordinateRegion(center: centerCoordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        mapView.setRegion(mapRegion, animated: true)
         
-        // SAMPLE LANDMARKS
-        let landmarks = [selections.landmark1, selections.landmark2]
-        var nextID = 0
-        for l in landmarks {
-            let annotation = UpdatablePointAnnotation()
-            annotation.title = l.title
-            //annotation.subtitle = l.desc
-            annotation.coordinate = l.coordinate
-            annotation.id = nextID
-            nextID += 1
-            //annotation.calloutEnabled = true
-            mapView.addAnnotation(annotation)
-        }
     return mapView
     }
     
     func updateUIView(_ uiView: MKMapView, context: Context) {
+        if deselect && !showAnnoDetail{
+            uiView.deselectAnnotation(appDelegate.getAnnotation(), animated: true)
+            deselect = false
+        }
+        if showAnnoDetail {
+            deselect = true
+        }
+        if resetAnnotations {
+            resetAnnotations = false
+            uiView.removeAnnotations(uiView.annotations)
+            uiView.addAnnotations(annotations)
+        }
+        if resetRegion && uiView.annotations.count > 0 {
+            resetRegion = false
+            let mapRegion = MKCoordinateRegion(center: uiView.annotations[0].coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+            uiView.setRegion(mapRegion, animated: true)
+        }
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    class Coordinator: NSObject, MKMapViewDelegate {
+        var parent: MapView
+        
+        init(_ parent: MapView) {
+            self.parent = parent
+        }
+        
+        func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+            parent.centerCoordinate = mapView.centerCoordinate
+        }
+        
+
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+            let selectedAnnotation = view.annotation as? SFAnnotation
+            parent.appDelegate.updateAnnotation(currentAnnotation: selectedAnnotation)
+            parent.showAnnoDetail = true
+        }
     }
 }
+

@@ -1,0 +1,43 @@
+BCSymbolMap Version: 2.0
+_embedded_stream_initiator
+___clang_call_terminate
+_mongoc_stream_embedded_poll
+_mongoc_stream_embedded_close
+_mongoc_stream_embedded_readv
+_mongoc_stream_embedded_writev
+_mongoc_stream_embedded_destroy
+_mongoc_stream_embedded_check_closed
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+src/mongo/embedded/mongoc_embedded/mongoc_embedded.cpp
+/data/mci/2cbd94a05cfea8d302c1e595d73ffb20/src
+mongoc_stream_embedded_check_closed
+mongoc_stream_embedded_destroy
+~unique_ptr
+/Applications/Xcode9.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory
+reset
+operator()
+~mongoc_stream_embedded_t
+first
+mongoc_stream_embedded_writev
+MemoryView
+size
+begin
+remaining
+write
+get
+operator=
+mongoc_stream_embedded_readv
+read
+current
+min<unsigned long>
+/Applications/Xcode9.2.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/algorithm
+min<unsigned long, std::__1::__less<unsigned long, unsigned long> >
+mongoc_stream_embedded_close
+mongoc_stream_embedded_poll
+embedded_stream_initiator
+mongoc_stream_embedded_t
+unique_ptr
+__compressed_pair
+__libcpp_compressed_pair_imp
+operator bool
+mongoc_embedded_v1_client_create

@@ -10,285 +10,389 @@ import SwiftUI
 import SceneKit
 import Combine
 import MapKit
-import UIKit
 import PartialSheet
-
-public class PanoButton: NSObject {
-    //@EnvironmentObject var selections: Selections
-    //var selections
-    var node: SCNNode
-    //var previewImage: Image?
-    //var location: CLLocationCoordinate2D
-    var vector: SCNVector3
-    var name: String
-    var desc: String
-    
-    let img: UIImageView
-    func highlight() {
-        img.isHighlighted = true
-    }
-    func unhighlight() {
-        img.isHighlighted = false
-    }
-    func select() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.updateButton(currentButton: self)
-    }
-    init (name: String, desc: String, vector: SCNVector3){
-        self.vector = vector
-        self.desc = desc
-        self.name = name
-
-            
-        let icon1 = "plus.circle.fill"
-        let icon2 = "plus.circle"
-        let color = UIColor(ciColor: .white)
-        let size = CGFloat(10)
-        
-        img = UIImageView(image: (UIImage(systemName: icon1)!).withRenderingMode(.alwaysTemplate), highlightedImage: (UIImage(systemName: icon2)!).withRenderingMode(.alwaysTemplate))
-        img.tintColor = color
-        
-        let plane = SCNPlane(width: size, height: size)
-        plane.firstMaterial!.diffuse.contents = img
-        self.node = SCNNode(geometry: plane)
-        self.node.position = vector
-        self.node.constraints = [SCNBillboardConstraint()]
-        self.node.name = desc
-    }
-}
-
-class UpdatablePointAnnotation: MKPointAnnotation {
-
-    // This property must be key-value observable, which the `@objc dynamic` attributes provide.
-    /*
-    @objc dynamic var coordinate: CLLocationCoordinate2D
-    
-    var title: String?
-    
-    var subtitle: String?
-    
-    var imageName: String?
-    
-    init(coordinate: CLLocationCoordinate2D) {
-        self.coordinate = coordinate
-        super.init()
-    }
-     */
-    var id: Int?
-    var desc: String?
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let annotation = view.annotation as? UpdatablePointAnnotation {
-            print(annotation.id!)
-        }
-    }
-    func select() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.updateAnnotation(currentAnnotation: self)
-    }
-    init (id: Int?=nil, desc: String?=nil) {
-        self.desc = desc
-    }
-}
-
-
-public class Landmark: NSObject, MKAnnotation {
-    public var title: String?
-    public var subtitle: String?
-    var desc: String?
-    var previewImage: UIImage?
-    var panoImage: UIImage
-    var panoButtons: [PanoButton]
-    @objc dynamic public var coordinate: CLLocationCoordinate2D
-    
-
-    init (title: String?, desc: String? = nil, previewImage: UIImage? = nil, panoImage: UIImage, panoButtons: [PanoButton], latitude: Double, longitude: Double){
-        self.title = title
-        self.desc = desc
-        self.previewImage = previewImage
-        self.panoImage = panoImage
-        self.panoButtons = panoButtons
-        self.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-        
-    }
-}
-
+import CoreData
 
 class Selections: ObservableObject {
     @Published var currentLandmark: Landmark?
     @Published var currentButton: PanoButton?
-    @Published var currentAnnotation: UpdatablePointAnnotation?
-    let landmark1 = Landmark(title: "Landmark #1", desc: "landmark #1 description test teste set se test est sdtets est se test estsetests e tst set est esetstst", panoImage: UIImage(imageLiteralResourceName: "landmark1.jpg"), panoButtons: [PanoButton(name: "lb1", desc: "landmark 1, button 1", vector: SCNVector3Make(90,0,0)), PanoButton(name: "l1b2", desc: "landmark 1, button 2", vector: SCNVector3Make(0,90,0)), PanoButton(name: "l1b3", desc: "landmark 1, button 3", vector: SCNVector3Make(0,0,90))], latitude: 43.702634, longitude: -72.286260)
-    let landmark2 = Landmark(title: "Landmark #2", panoImage: UIImage(imageLiteralResourceName: "landmark2.jpg"), panoButtons: [PanoButton(name: "l2b1", desc: "landmark 2, button 1", vector: SCNVector3Make(-90,0,0)), PanoButton(name: "l2b2", desc: "landmark 2, button 2", vector: SCNVector3Make(0,-90,0)), PanoButton(name: "l2b3", desc: "landmark 2, button 3", vector: SCNVector3Make(0,0,-90))], latitude: 43.703127, longitude: -72.285018)
-    
-    func toggleLandmark() {
-        if currentLandmark == landmark1 {
-            currentLandmark = landmark2
-        } else {
-            currentLandmark = landmark1
-        }
-    }
-    func getButtonName() -> String {
-        if currentButton != nil {
-            return currentButton!.name
-        } else {
-            return "No name"
-        }
-    }
-    func getButtonDesc() -> String {
-        if currentButton != nil {
-            return currentButton!.desc
-        } else {
-            return "No description"
-        }
-    }
-    
-    init() {
-        currentLandmark = landmark1
-    }
-    
-}
-
-
-let backgroundColor = Color(white: 0.12, opacity: 1)
-let textColor = Color.white
-
-
-struct LargeTitle: ViewModifier {
-    let font = Font.system(.largeTitle).weight(.bold)
-    func body(content: Content) -> some View {
-        content
-            .font(font)
-            .foregroundColor(textColor)
-    }
-}
-
-struct Title: ViewModifier {
-    let font = Font.system(.title).weight(.semibold)
-    func body(content: Content) -> some View {
-        content
-            .font(font)
-            .foregroundColor(textColor)
-    }
-}
-
-
-struct Headline: ViewModifier {
-    let font = Font.system(.headline)//.weight(.bold)
-    func body(content: Content) -> some View {
-        content
-            .font(font)
-            .foregroundColor(textColor)
-    }
-}
-
-
-struct GradientText: ViewModifier {
-    let font = Font.system(.largeTitle).weight(.semibold)
-    func body(content: Content) -> some View {
-        content
-            .font(.largeTitle)
-            .foregroundColor(Color.white)
-            //.fontWeight(.bold)
-    }
-}
-
-
-
-extension View {
-    func largeTitle() -> some View {
-        self.modifier(LargeTitle())
-    }
-    func title() -> some View {
-        self.modifier(Title())
-    }
-    func headline() -> some View {
-        self.modifier(Headline())
-    }
-    func gradientText() -> some View {
-        self.modifier(GradientText())
-    }
-}
-
-extension Image {
-    func headlineImage() -> some View {
-        self
-            .resizable()
-            .foregroundColor(textColor)
-            .frame(width: 30, height: 30)
-    }
+    @Published var currentAnnotation: SFAnnotation?
+    @Published var currentAudio: URL?
+    @Published var showButtonDetail: Bool = false
 }
 
 
 extension AnyTransition {
-    static var moveAndFade: AnyTransition {
-        let insertion = AnyTransition.move(edge: .top)
-        let removal = AnyTransition.move(edge: .top)
-        return .asymmetric(insertion: insertion, removal: removal)
+    static var fadeAndSlide: AnyTransition {
+        AnyTransition.opacity.combined(with: .move(edge: .top))
     }
 }
-
-
 
 
 struct ContentView: View {
-    @State var showWelcome = true
-    @State var showPanoDetail = false
+    @State private var showWelcome = !UserDefaults.standard.bool(forKey: "onboarded")
+    @State private var showAnnoDetail = false
+    @State private var centerCoordinate = CLLocationCoordinate2D()
+    @State private var resetAnnotations = false
+    @State private var resetRegion = false
+    @State private var annotations = [SFAnnotation]()
+    @State private var landmarks = [Landmark]()
+    @EnvironmentObject var partialSheetManager: PartialSheetManager
     @EnvironmentObject var selections: Selections
-    @EnvironmentObject var partialSheet: PartialSheetManager
+    @EnvironmentObject var settings: Settings
+    
+    @State private var torchIsOn = false
+    @State private var showPano = false
+
+    @State private var loading: Bool = false
+    @State private var unloading: Bool = false
+    @State private var syncing: Bool = false
+    @State private var unsyncing: Bool = false
+    @State private var erroring: Bool = false
+    @State private var showAlerts: Bool = false
+    
+    @State private var page : String = "Home"
+    @State private var ar_result : String = ""
+    
+    
     var body: some View {
-        ZStack(alignment: .leading) {
-            //backgroundColor
+        
+        return ZStack(alignment: .leading) {
             Color(white: 0.8, opacity: 1)
                 .edgesIgnoringSafeArea(.all)
-                .zIndex(0)
             TabView {
-                MapView()
-                    .edgesIgnoringSafeArea([.all])
+                ZStack {
+                    MapView(centerCoordinate: $centerCoordinate, showAnnoDetail: $showAnnoDetail, resetAnnotations: $resetAnnotations, resetRegion: $resetRegion, annotations: annotations)
+                        .edgesIgnoringSafeArea([.all])
+                        .partialSheet(isPresented: $showAnnoDetail) {
+                            AnnoDetailView(showAnnoDetail: $showAnnoDetail)
+                        }
+                    Circle()
+                        .fill(Color.blue)
+                        .opacity(0.3)
+                        .frame(width: 16, height: 16)
+                    VStack {
+                        Spacer()
+                            .frame(height: 20)
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                resetRegion = true
+                            }) {
+                                Image(systemName: "location.circle")
+                                    .squareIconButton()
+                            }.padding(.trailing)
+                        }
+                        Spacer()
+                        /// test annotation adder button for debugging
+                        /*
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                let newLocation = SFAnnotation()
+                                newLocation.coordinate = self.centerCoordinate
+                                newLocation.title = "User-added test annotation"
+                                newLocation.desc = "test annotation added by the use of the '+' button"
+                                self.annotations.append(newLocation)
+                                resetAnnotations = true
+                            }) {
+                                Image(systemName: "plus")
+                                    .circleIconButton()
+                                    .padding(20)
+                            }
+                        }
+                        */
+                    }
+                }
                     .tabItem {
-                        Image(systemName: "list.dash")
+                        Image(systemName: "map")
                         Text("Map")
                     }
-
-                PanoView()
-                    .edgesIgnoringSafeArea([.all])
-                    .tabItem {
-                        Image(systemName: "square.and.pencil")
-                        Text("Pano Test")
-                    }
-                
-                VStack(alignment: .center) {
-                    Spacer()
-                        Button(action: {
-                            self.partialSheet.showPartialSheet({
-                                print("dismissed")
-                            }) {
-                                AnnotationDetailView()
+                ZStack {
+                    if showPano {
+                        ZStack{
+                            PanoView(landmark: $selections.currentLandmark, showButtonDetail: $selections.showButtonDetail)
+                                .edgesIgnoringSafeArea([.all])
+                                .partialSheet(isPresented: $selections.showButtonDetail) {
+                                    ButtonDetailView(showButtonDetail: $selections.showButtonDetail)
+                                }
+                            VStack {
+                                if self.selections.currentLandmark != nil {
+                                    if self.selections.currentLandmark!.title != nil {
+                                        Text(self.selections.currentLandmark!.title!)
+                                            .font(Font.system(.headline))
+                                            .padding()
+                                    }
+                                } else {
+                                    Text("No Landmark")
+                                        .font(Font.system(.headline))
+                                        .padding()
+                                }
+                                HStack {
+                                    Spacer()
+                                    Button(action: {
+                                        self.showPano = false
+                                        }) {
+                                        Image(systemName: "multiply")
+                                            .frame(width: 8, height: 8)
+                                            .padding()
+                                            .font(.title)
+                                            .foregroundColor(Color(.label).opacity(1))
+                                            .background(Color(.tertiarySystemGroupedBackground).opacity(1).blur(radius: 0.50))
+                                            .clipShape(Circle())
+                                    }
+                                    .padding(.trailing)
+                                    .padding(.top)
+                                }
+                                Spacer()
                             }
-                        }, label: {
-                            Text("Show Partial Sheet")
-                        })
-                    Spacer()
-                }
-                    .addPartialSheet()
-                    .tabItem {
-                        Image(systemName: "square.and.pencil")
-                        Text("Annotation Detail Test")
+                        }
+                    } else {
+                        /// IMAGE RECOGNITION MODE
+                        ARViewIndicator(ar_result: $ar_result, page: $page, showPano: $showPano, currentLandmark: $selections.currentLandmark, landmarks: $landmarks)
+                            .edgesIgnoringSafeArea(.all)
+                        /// QR CODE SCANNER MODE
+                        /*
+                        CBScanner(
+                            supportBarcode: .constant([.qr]), //Set type of barcode you want to scan
+                            torchLightIsOn: $torchIsOn,
+                            scanInterval: .constant(self.settings.scanInterval),
+                            cameraPosition: $settings.cameraPosition
+                        ){
+                            //When the scanner found a barcode
+                            print("BarCodeType =",$0.type.rawValue, "Value =",$0.value)
+                            for l in self.landmarks {
+                                if l.code != nil && l.code! == $0.value{
+                                    self.selections.currentLandmark = l
+                                    self.showPano = true
+                                }
+                            }
+                        }
+                            .edgesIgnoringSafeArea(.all)
+                        HStack {
+                            Spacer()
+                            VStack {
+                                Spacer()
+                                    .frame(height: 20)
+                                Button(action: {
+                                    if self.settings.cameraPosition == .back {
+                                        self.torchIsOn.toggle()
+                                    }
+                                }) {
+                                    Image(systemName: self.torchIsOn ? "bolt.fill" : "bolt.slash.fill")
+                                        .squareIconButton(trigger: self.torchIsOn, highlightColor: Color.yellow)
+                                        .animation(.easeInOut)
+                                }.padding(.bottom)
+                                Button(action: {
+                                    if settings.cameraPosition == .back {
+                                        self.torchIsOn = false
+                                        self.settings.cameraPosition = .front
+                                        settings.defaults.set(true, forKey: "frontCamera")
+                                    } else {
+                                        self.settings.cameraPosition = .back
+                                        settings.defaults.set(false, forKey: "frontCamera")
+                                    }
+                                    
+                                    
+                                }) {
+                                    Image(systemName: (settings.cameraPosition == .back) ? "camera.rotate" : "camera.rotate.fill")
+                                        .squareIconButton()
+                                        .animation(.easeInOut)
+                                }
+                                Spacer()
+                            }
+                        }.padding(.trailing)
+                        */
                     }
-                
-            }.zIndex(1)
-            
-            .sheet(isPresented: $showWelcome) {
-                WelcomeView(showWelcome: self.$showWelcome)
+                }
+                    .tabItem {
+                        Image(systemName: "camera")
+                        Text("Scanner")
+                }
+            }.onAppear(perform: startView)
+            HStack {
+                VStack {
+                    Spacer()
+                        .frame(height: 20)
+                    Button(action: {
+                        sync()
+                    }) {
+                        Image(systemName: "arrow.clockwise.circle")
+                            .squareIconButton()
+                    }.padding(.bottom)
+                    Button(action: {
+                        self.showWelcome = true
+                    }) {
+                        Image(systemName: self.showWelcome ? "questionmark.circle.fill" : "questionmark.circle")
+                            .squareIconButton()
+                    }
+                    Spacer()
+                }.padding(.leading)
+            }
+            if true/*showAlerts*/ { /// DEV Note: Figure out how to get this working without the binding variable workaround
+                VStack {
+                    if loading {
+                        AlertView(text: "Loading app data: please wait.", color: Config.noteColor, showAlerts: $showAlerts).transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
+                        Spacer()
+                    }
+                }
+                .onAppear {
+                    self.animateAndDelayWithSeconds(0.5) { self.loading = true }
+                    self.animateAndDelayWithSeconds(1.5) { self.loading = false }
+                }
+                VStack {
+                    if unloading {
+                        AlertView(text: "Successfully loaded app data.", color: Config.noteColor, showAlerts: $showAlerts).transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
+                        Spacer()
+                    }
+                }
+                .onAppear {
+                    self.animateAndDelayWithSeconds(0.5) { self.unloading = true }
+                    self.animateAndDelayWithSeconds(1.5) { self.unloading = false }
+                }
+                VStack {
+                    if syncing {
+                        AlertView(text: "Syncing app data with server...", color: Config.noteColor, showAlerts: $showAlerts).transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
+                        Spacer()
+                    }
+                }
+                .onAppear {
+                    self.animateAndDelayWithSeconds(0.5) { self.syncing = true }
+                    self.animateAndDelayWithSeconds(1.5) { self.syncing = false }
+                }
+                VStack {
+                    if unsyncing {
+                        AlertView(text: "Successfully synced with server.", color: Config.noteColor, showAlerts: $showAlerts).transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
+                        Spacer()
+                    }
+                }
+                .onAppear {
+                    self.animateAndDelayWithSeconds(0.5) { self.unsyncing = true }
+                    self.animateAndDelayWithSeconds(1.5) { self.unsyncing = false }
+                }
+                VStack {
+                    if erroring {
+                        AlertView(text: "An error occurred. Try again.", color: Config.alertColor, showAlerts: $showAlerts).transition(.asymmetric(insertion: .fadeAndSlide, removal: .fadeAndSlide))
+                        Spacer()
+                    }
+                }
+                .onAppear {
+                    self.animateAndDelayWithSeconds(0.5) { self.erroring = true }
+                    self.animateAndDelayWithSeconds(1.5) { self.erroring = false }
+                }
             }
             
-
+        }
+        .sheet(isPresented: $showWelcome) {
+            WelcomeView(showWelcome: $showWelcome)
+        }
+        .addPartialSheet(style: PartialSheetStyle(
+            background: .blur(.systemMaterial),
+            handlerBarColor: Color(UIColor.systemGray2),
+            enableCover: true,
+            coverColor: Color.black.opacity(0.4),
+            blurEffectStyle: .dark,
+            cornerRadius: 10,
+            minTopDistance: 110)
+        )
+    }
+    
+    func startView() {
+        if settings.onboarded {
+            print("already onboarded, loading data")
+            load()
+        } else {
+            settings.defaults.set(true, forKey: "onboarded")
+            print("never onboarded, syncing data")
+            sync()
         }
     }
-}
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    func load() {
+        self.loading = true
+        withAnimation {
+            self.loading = true
+        }
+        let loadedData = loadData()
+        if loadedData != nil {
+            (annotations, landmarks) = loadData()!
+            resetAnnotations = true
+            withAnimation {
+                self.loading = false
+                self.unloading = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    self.unloading = false
+                }
+            }
+        } else {
+            withAnimation {
+                self.loading = false
+                self.erroring = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    self.erroring = false
+                }
+            }
+        }
+    }
+    func sync() {
+        if !loading && !syncing {
+            showAlerts = true
+            withAnimation {
+                self.syncing = true
+            }
+            getDocs(collNames: ["annotations", "buttons", "landmarks"]) { (docs, error) in
+                if (error == nil && docs != nil && docs!["annotations"] != nil && docs!["buttons"] != nil && docs!["landmarks"] != nil ) {
+                    let decodedDocs = decodeDocs(docs: docs!)
+                    if decodedDocs != nil {
+                        (annotations, landmarks) = contextualizeAndGetData(decodedDocs: decodedDocs!)
+                        resetAnnotations = true
+                        if saveData() != nil { // failure case
+                            print("error saving documents")
+                            withAnimation {
+                                self.syncing = false
+                                self.erroring = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                    self.erroring = false
+                                }
+                            }
+                        } else { // success case
+                            print("data saved")
+                            withAnimation {
+                                self.syncing = false
+                                self.unsyncing = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                    self.unsyncing = false
+                                }
+                            }
+                        }
+                    } else { // failure case
+                        withAnimation {
+                            self.syncing = false
+                            self.erroring = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                self.erroring = false
+                            }
+                        }
+                        print("error decoding documents")
+                    }
+                } else { // failure case
+                    withAnimation {
+                        self.syncing = false
+                        self.erroring = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                            self.erroring = false
+                        }
+                    }
+                    print("Error in retrieving documents", error as Any)
+                }
+            }
+        }
+    }
+    
+    func animateAndDelayWithSeconds(_ seconds: TimeInterval, action: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            withAnimation {
+                action()
+            }
+        }
     }
 }

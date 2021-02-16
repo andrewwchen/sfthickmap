@@ -1,0 +1,6 @@
+framework module StitchCoreSDK {
+  umbrella header "StitchCoreSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
